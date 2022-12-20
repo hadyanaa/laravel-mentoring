@@ -19,17 +19,21 @@ Presensi
             <div class="card-body">
                 <div class="row my-2">
                     <div class="col-2">Kelompok</div>
-                    <div class="col-3">Umar Bin Khattab</div>
+                    <div class="col-10">Umar Bin Khattab</div>
                 </div>
 
                 <div class="row my-2">
                     <div class="col-6">
-                        <div class="col-2"><b>Materi</b></div>
-                        <div class="col-10">Makna Ukhuwah Islamiyah</div>
+                        <div class="row">
+                            <div class="col-4"><b>Materi</b></div>
+                            <div class="col-8">Makna Ukhuwah Islamiyah</div>
+                        </div>
                     </div>
                     <div class="col-6">
-                        <div class="col-2"><b>Tanggal</b></div>
-                        <div class="col-10">02 Agustus 2022</div>
+                        <div class="row">
+                            <div class="col-4"><b>Tanggal</b></div>
+                            <div class="col-8">02 Agustus 2022</div>
+                        </div>
                     </div>
                 </div>
 

@@ -22,13 +22,13 @@ Route::get('/dashboard', function(){
 });
 
 Route::get('/presensi', function(){
-    return view('pages.presensi');
+    return view('pages.presensi.presensi');
 });
 
 Route::get('/presensi-kelompok', function(){
-    return view('pages.presensiKelompok');
+    return view('pages.presensi.presensiKelompok');
 });
 
 Route::get('/presensi-kegiatan', function(){
-    return view('pages.presensiKegiatan');
+    return view('pages.presensi.presensiKegiatan');
 });
