@@ -20,3 +20,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function(){
     return view('pages.dashboard');
 });
+
+Route::get('/presensi', function(){
+    return view('pages.presensi');
+});
+
+Route::get('/presensi-kelompok', function(){
+    return view('pages.presensiKelompok');
+});
+
+Route::get('/presensi-kegiatan', function(){
+    return view('pages.presensiKegiatan');
+});
