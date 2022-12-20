@@ -20,9 +20,10 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('/template/css/sb-admin-2.min.css')}}" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
     <link href="{{asset('/template/css/app.css')}}" rel="stylesheet">
+
+    <!-- Custom icons for this template-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
 </head>
 
