@@ -44,3 +44,15 @@ Route::get('/data-mentor/form', function(){
 Route::get('/data-mentor/detail', function(){
     return view('pages.kelola.detailMentor');
 });
+
+Route::get('/data-mentee', function(){
+    return view('pages.kelola.dataMentee');
+});
+
+Route::get('/data-mentee/form', function(){
+    return view('pages.kelola.formMentee');
+});
+
+Route::get('/data-mentee/detail', function(){
+    return view('pages.kelola.detailMentee');
+});
