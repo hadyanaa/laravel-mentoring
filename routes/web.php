@@ -56,3 +56,7 @@ Route::get('/data-mentee/form', function(){
 Route::get('/data-mentee/detail', function(){
     return view('pages.kelola.detailMentee');
 });
+
+Route::get('/mentor/isi-presensi', function(){
+    return view('pages.presensiMentor.isiPresensi');
+});
