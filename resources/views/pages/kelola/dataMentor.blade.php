@@ -31,9 +31,9 @@ Kelola
                       </tr>
                     </thead>
                     <tbody>
-                        @forelse ($mentor as $item)
+                        @forelse ($mentor as $key=>$item)
                         <tr>
-                            <td>{{$item->id}}</td>
+                            <td>{{$key + 1}}</td>
                             <td>{{$item->nama_mentor}}</td>
                             <td>{{$item->jenis_kelamin}}</td>
                             <td>{{$item->prodi}}</td>
@@ -44,9 +44,13 @@ Kelola
                                 <a href="/mentor/{{$item->id}}/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                                     <i class="bi bi-pencil-square text-white"></i> 
                                 </a>
-                                <a href="/presensi-kelompok" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
-                                    <i class="bi bi-trash text-white"></i> 
-                                </a>
+                                <form action="/mentor/{{$item->id}}" method="POST" class="d-none d-sm-inline-block">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                        <i class="bi bi-trash text-white"></i> 
+                                    </button>
+                                </form>
                             </td>                    
                         </tr>
                             

@@ -147,6 +147,12 @@ class MentorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mentor = Mentor::find($id);
+        $user = User::find($mentor->user_id);
+
+        $mentor->delete();
+        $user->delete();
+
+        return redirect('/mentor');
     }
 }
