@@ -27,27 +27,27 @@ Kelola
                     <tbody>
                       <tr>
                         <th scope="row">Nama Mentor</th>
-                        <td>:   Hadyan Abdul Aziz</td>                   
+                        <td>:   {{$mentor->nama_mentor}}</td>                   
                       </tr>
                       <tr>
                         <th scope="row">Jenis Kelamin</th>
-                        <td>:   Laki-laki</td>
+                        <td>:   {{$mentor->jenis_kelamin}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Asal Institusi</th>
-                        <td>: Sekolah Tinggi Teknologi Terpadu Nurul Fikri</td>
+                        <td>: {{$mentor->asal_institusi}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Prodi</th>
-                        <td>: Sistem Informasi</td>
+                        <td>: {{$mentor->prodi}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Email</th>
-                        <td>: hadyanabdulaziz@gmail.com</td>
+                        <td>: {{$user->email}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Password</th>
-                        <td>: *********</td>
+                        <td>: {{$user->password}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Aktivitas</th>
@@ -55,7 +55,7 @@ Kelola
                       </tr>
                       <tr>
                         <th scope="row">Domisili</th>
-                        <td>: Depok</td>
+                        <td>: {{$mentor->domisili}}</td>
                       </tr>
                     </tbody>
                 </table>

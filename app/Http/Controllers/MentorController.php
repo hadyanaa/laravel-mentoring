@@ -79,7 +79,10 @@ class MentorController extends Controller
      */
     public function show($id)
     {
-        //
+        $mentor = Mentor::find($id);
+        $user = User::find($mentor->user_id);
+        
+        return view('pages.kelola.detailMentor', ['mentor'=> $mentor, 'user'=> $user]);
     }
 
     /**

@@ -38,7 +38,7 @@ Kelola
                             <td>{{$item->jenis_kelamin}}</td>
                             <td>{{$item->prodi}}</td>
                             <td>
-                                <a href="/data-mentor/detail" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                <a href="/mentor/{{$item->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="bi bi-eye text-white"></i> 
                                 </a>
                                 <a href="/presensi-kelompok" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
