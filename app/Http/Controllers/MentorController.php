@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Mentor;
@@ -20,7 +18,7 @@ class MentorController extends Controller
     public function index()
     {
         $mentor = Mentor::all();
-        return view('pages.kelola.dataMentor', compact('mentor'));
+        return view('pages.kelola.mentor.dataMentor', compact('mentor'));
     }
 
     /**
@@ -30,7 +28,7 @@ class MentorController extends Controller
      */
     public function create()
     {
-        return view('pages.kelola.formMentor');
+        return view('pages.kelola.mentor.formMentor');
     }
 
     /**
@@ -85,7 +83,7 @@ class MentorController extends Controller
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
         
-        return view('pages.kelola.detailMentor', ['mentor'=> $mentor, 'user'=> $user]);
+        return view('pages.kelola.mentor.detailMentor', ['mentor'=> $mentor, 'user'=> $user]);
     }
 
     /**
@@ -99,7 +97,7 @@ class MentorController extends Controller
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
         
-        return view('pages.kelola.editMentor', ['mentor'=> $mentor, 'user'=> $user]);
+        return view('pages.kelola.mentor.editMentor', ['mentor'=> $mentor, 'user'=> $user]);
     }
 
     /**

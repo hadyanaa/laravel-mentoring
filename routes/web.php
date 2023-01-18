@@ -50,9 +50,9 @@ Route::get('/presensi-kegiatan', function(){
 //     return view('pages.kelola.formMentor');
 // });
 
-Route::get('/data-mentor/detail', function(){
-    return view('pages.kelola.detailMentor');
-});
+// Route::get('/data-mentor/detail', function(){
+//     return view('pages.kelola.detailMentor');
+// });
 
 Route::get('/data-mentee', function(){
     return view('pages.kelola.dataMentee');
