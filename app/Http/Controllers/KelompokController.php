@@ -92,7 +92,17 @@ class KelompokController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_kelompok' => 'required', 
+            'mentor_id' => 'required',
+        ]);
+
+        $kelompok = Kelompok::find($id);
+        $kelompok->nama_kelompok = $request->nama_kelompok;
+        $kelompok->mentor_id = $request->mentor_id;
+        $kelompok->update();
+
+        return redirect('/kelompok');
     }
 
     /**
@@ -103,6 +113,9 @@ class KelompokController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kelompok = Kelompok::find($id);
+        $kelompok->delete();
+        
+        return redirect('/kelompok');
     }
 }

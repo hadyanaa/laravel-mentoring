@@ -17,7 +17,7 @@ Kelola
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form action="/kelompok" method="POST">
+                <form action="/kelompok/{{$kelompok->id}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="row">
