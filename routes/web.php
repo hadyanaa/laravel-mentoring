@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\KelompokController;
+use App\Http\Controllers\MenteeController;
 
 
 /*
@@ -19,8 +20,11 @@ use App\Http\Controllers\KelompokController;
 //CRUD Mentor
 Route::resource('mentor', MentorController::class);
 
-//CR Kelompok
+//CRUD Kelompok
 Route::resource('kelompok', KelompokController::class);
+
+//CRUD Mentee
+Route::resource('mentee', MenteeController::class);
 
 
 
@@ -58,20 +62,20 @@ Route::get('/presensi-kegiatan', function(){
 //     return view('pages.kelola.detailMentor');
 // });
 
-Route::get('/data-mentee', function(){
-    return view('pages.kelola.dataMentee');
-});
+// Route::get('/data-mentee', function(){
+//     return view('pages.kelola.dataMentee');
+// });
 
-Route::get('/data-mentee/form', function(){
-    return view('pages.kelola.formMentee');
-});
+// Route::get('/data-mentee/form', function(){
+//     return view('pages.kelola.formMentee');
+// });
 
-Route::get('/data-mentee/detail', function(){
-    return view('pages.kelola.detailMentee');
-});
+// Route::get('/data-mentee/detail', function(){
+//     return view('pages.kelola.detailMentee');
+// });
 
-Route::get('/mentor/isi-presensi', function(){
-    return view('pages.presensiMentor.isiPresensi');
-});
+// Route::get('/mentor/isi-presensi', function(){
+//     return view('pages.presensiMentor.isiPresensi');
+// });
 
 // Akhir Route Frontend (sementara)

@@ -5,6 +5,15 @@ Kelola
 @endsection
 
 @section('content')
+<script type="text/javascript">
+ $(function(){
+  $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+  });
+ });
+</script>
 <div class="row">
 
     <!-- Area Chart -->
@@ -17,71 +26,148 @@ Kelola
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form>
+                <form action="/mentee" method="POST">
+                    @csrf
                     <div class="row">
+                        {{-- Input Nama Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">NAMA MENTEE</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                              <label class="form-label">NAMA MENTEE</label>
+                              <input type="text" name="nama_lengkap" class="form-control">  
                             </div>
+                            @error('nama_lengkap')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Jenis Kelamin Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">JENIS KELAMIN</label>
-                              <select class="form-control form-select">
-                                <option value="laki-laki">Laki-laki</option>
-                                <option value="perempuan">Perempuan</option>
+                              <label class="form-label">JENIS KELAMIN</label>
+                              <select class="form-control form-select" name="jenis_kelamin">
+                                <option value="">-- Pilih Jenis Kelamin --</option>
+                                <option value="Ikhwan">Ikhwan</option>
+                                <option value="Akhwat">Akhwat</option>
                               </select>
                             </div>
+                            @error('jenis_kelamin')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="row">
+                        {{-- Input Tempat Lahir Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">ASAL INSTITUSI</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                              <label class="form-label">TEMPAT LAHIR (KOTA)</label>
+                              <input type="text" name="tempat_lahir" class="form-control">  
                             </div>
+                            @error('tempat_lahir')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Tanggal Lahir Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">PRODI</label>
-                              <select class="form-control form-select">
+                                <label class="form-label">TANGGAL LAHIR</label>
+                                <div class="input-group date">
+                                    <input data-provide="datepicker" type="text" class="form-control" name="tgl_lahir">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">
+                                            <i class="bi bi-calendar-date"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            @error('tgl_lahir')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{-- Input Nomor HP Mentee --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label class="form-label">NOMOR HP</label>
+                              <input type="text" class="form-control" name="no_hp">  
+                            </div>
+                            @error('no_hp')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        {{-- Input Prodi Mentee --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label class="form-label">PRODI</label>
+                              <select class="form-control form-select" name="prodi">
+                                <option value="">-- Pilih Prodi --</option>
                                 <option value="SI">Sistem Informasi</option>
                                 <option value="TI">Teknik Informatika</option>
                                 <option value="BD">Bisnis Digital</option>
                               </select>
                             </div>
+                            @error('prodi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="row">
+                        {{-- Input Asal Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">DOMISILI</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                                <label class="form-label">ALAMAT ASAL</label>
+                                <input type="text" class="form-control" name="alamat_asal">  
                             </div>
+                            @error('alamat_asal')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Domisili Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">AKTIVITAS</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <label class="form-label">ALAMAT DOMISILI</label>
+                                <input type="text" class="form-control" name="alamat_domisili"> 
                             </div>
+                            @error('alamat_domisili')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="row">
+                        {{-- Input Akun IG Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">MENTOR</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                                <label class="form-label">AKUN INSTAGRAM</label>
+                                <input type="text" class="form-control" name="akun_ig">  
                             </div>
+                            @error('akun_ig')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Domisili Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">KELOMPOK</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <label class="form-label">KELOMPOK MENTORING</label>
+                                <select class="form-control form-select" name="kelompok_id">
+                                    <option value="">-- Pilih Kelompok --</option>
+                                    @forelse ($kelompok as $item)
+                                        <option value="{{$item->id}}">{{$item->nama_kelompok}}</option>        
+                                    @empty
+                                    <option value="">Tidak ada data Kelompok</option>
+                                    @endforelse
+                                </select>
                             </div>
+                            @error('kelompok_id')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

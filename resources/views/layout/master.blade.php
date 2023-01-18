@@ -24,6 +24,9 @@
     <link href="{{asset('/template/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('/template/css/app.css')}}" rel="stylesheet">
 
+    {{-- Date Time Picker --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Custom icons for this template-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
@@ -117,6 +120,18 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('/template/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('/template/js/demo/chart-pie-demo.js')}}"></script>
+
+    {{-- Date Time Picker scripts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $(function(){
+        $(".datepicker").datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true,
+            todayHighlight: true,
+        });
+        });
+    </script>    
 
 </body>
 
