@@ -41,7 +41,7 @@ Kelola
                                 <a href="/mentor/{{$item->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="bi bi-eye text-white"></i> 
                                 </a>
-                                <a href="/presensi-kelompok" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                                <a href="/mentor/{{$item->id}}/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                                     <i class="bi bi-pencil-square text-white"></i> 
                                 </a>
                                 <a href="/presensi-kelompok" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
