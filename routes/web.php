@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\KelompokController;
 
 
 /*
@@ -17,6 +18,9 @@ use App\Http\Controllers\MentorController;
 
 //CRUD Mentor
 Route::resource('mentor', MentorController::class);
+
+//CR Kelompok
+Route::resource('kelompok', KelompokController::class);
 
 
 

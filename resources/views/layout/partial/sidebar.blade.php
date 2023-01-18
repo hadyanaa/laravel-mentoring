@@ -48,6 +48,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/mentor">Data Mentor</a>
                 <a class="collapse-item" href="/data-mentee">Data Mentee</a>
+                <a class="collapse-item" href="/kelompok">Data Kelompok</a>
             </div>
         </div>
     </li>
