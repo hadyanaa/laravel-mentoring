@@ -16,13 +16,10 @@ class KelompokController extends Controller
      */
     public function index()
     {
-
         $dataKelompok = DB::table('kelompok')
             ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
             ->select('kelompok.*', 'mentor.nama_mentor')
             ->get();
-        // $kelompok = Kelompok::all();
-        // $mentor = Mentor::all();
         return view('pages.kelola.kelompok.dataKelompok', ['dataKelompok'=> $dataKelompok]);
     }
 
@@ -66,7 +63,13 @@ class KelompokController extends Controller
      */
     public function show($id)
     {
-        //
+        $dataKelompok = DB::table('kelompok')
+        ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
+        ->select('kelompok.*', 'mentor.nama_mentor')
+        ->where('kelompok.id', '=', $id)
+        ->get();
+
+        return view('pages.kelola.kelompok.detailKelompok', ['dataKelompok'=> $dataKelompok[0]]);
     }
 
     /**
@@ -115,7 +118,7 @@ class KelompokController extends Controller
     {
         $kelompok = Kelompok::find($id);
         $kelompok->delete();
-        
+
         return redirect('/kelompok');
     }
 }
