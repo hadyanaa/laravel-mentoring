@@ -17,71 +17,108 @@ Kelola
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form>
+                <form action="/mentor" method="POST">
+                    @csrf
                     <div class="row">
+                        {{-- Input Nama Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">NAMA MENTOR</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                              <label class="form-label">NAMA MENTOR</label>
+                              <input type="text" name="nama_mentor" class="form-control">  
                             </div>
+                            @error('nama_mentor')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Jenis Kelamin Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">JENIS KELAMIN</label>
-                              <select class="form-control form-select">
+                              <label class="form-label">JENIS KELAMIN</label>
+                              <select class="form-control form-select" name="jenis_kelamin">
+                                <option value="">-- Pilih Jenis Kelamin --</option>
                                 <option value="laki-laki">Laki-laki</option>
                                 <option value="perempuan">Perempuan</option>
                               </select>
                             </div>
+                            @error('jenis_kelamin')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="row">
+                        {{-- Input Institusi Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">ASAL INSTITUSI</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                              <label class="form-label">ASAL INSTITUSI</label>
+                              <input type="text" class="form-control" name="asal_institusi">  
                             </div>
+                            @error('asal_institusi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Prodi Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">PRODI</label>
-                              <select class="form-control form-select">
+                              <label class="form-label">PRODI</label>
+                              <select class="form-control form-select" name="prodi">
+                                <option value="">-- Pilih Prodi --</option>
                                 <option value="SI">Sistem Informasi</option>
                                 <option value="TI">Teknik Informatika</option>
                                 <option value="BD">Bisnis Digital</option>
                               </select>
                             </div>
+                            @error('prodi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="row">
+                        {{-- Input Email Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">EMAIL</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                                <label class="form-label">EMAIL</label>
+                                <input type="email" class="form-control" name="email">  
                             </div>
+                            @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Aktivitas Mentor --}}
+                        {{-- Disabled untuk sementara --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">AKTIVITAS</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <label class="form-label">AKTIVITAS</label>
+                                <input type="text" class="form-control" readonly> 
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
+                        {{-- Input Password Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">PASSWORD</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+                                <label class="form-label">PASSWORD</label>
+                                <input type="password" class="form-control" name="password">  
                             </div>
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
+                        {{-- Input Domisili Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">DOMISILI</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                                <label class="form-label">DOMISILI</label>
+                                <input type="text" class="form-control" name="domisili"> 
                             </div>
+                            @error('domisili')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -18,6 +18,10 @@ use App\Http\Controllers\MentorController;
 //CRUD Mentor
 Route::resource('mentor', MentorController::class);
 
+
+
+// Route Frontend (sementara)
+
 Route::get('/', function () {
     return view('layout.master');
 });
@@ -38,13 +42,13 @@ Route::get('/presensi-kegiatan', function(){
     return view('pages.presensi.presensiKegiatan');
 });
 
-Route::get('/data-mentor', function(){
-    return view('pages.kelola.dataMentor');
-});
+// Route::get('/data-mentor', function(){
+//     return view('pages.kelola.dataMentor');
+// });
 
-Route::get('/data-mentor/form', function(){
-    return view('pages.kelola.formMentor');
-});
+// Route::get('/data-mentor/form', function(){
+//     return view('pages.kelola.formMentor');
+// });
 
 Route::get('/data-mentor/detail', function(){
     return view('pages.kelola.detailMentor');
@@ -65,3 +69,5 @@ Route::get('/data-mentee/detail', function(){
 Route::get('/mentor/isi-presensi', function(){
     return view('pages.presensiMentor.isiPresensi');
 });
+
+// Akhir Route Frontend (sementara)

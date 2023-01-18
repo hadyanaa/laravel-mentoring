@@ -46,7 +46,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/data-mentor">Data Mentor</a>
+                <a class="collapse-item" href="/mentor">Data Mentor</a>
                 <a class="collapse-item" href="/data-mentee">Data Mentee</a>
             </div>
         </div>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Mentor;
+use App\Models\User;
 
 class MentorController extends Controller
 {
@@ -13,7 +16,8 @@ class MentorController extends Controller
      */
     public function index()
     {
-        //
+        $mentor = Mentor::all();
+        return view('pages.kelola.dataMentor', compact('mentor'));
     }
 
     /**
@@ -23,7 +27,7 @@ class MentorController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.kelola.formMentor');
     }
 
     /**
@@ -34,7 +38,37 @@ class MentorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_mentor' => 'required', 
+            'jenis_kelamin' => 'required',
+            'asal_institusi' => 'required',
+            'prodi' => 'required',
+            'domisili' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $user = new User;
+        $user->name = $request->nama_mentor;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+
+        $input_id_user = DB::table('users')
+                ->select('id')
+                ->where('email', $request->email)
+                ->get();
+
+        $mentor = new Mentor;
+        $mentor->nama_mentor = $request->nama_mentor;
+        $mentor->jenis_kelamin = $request->jenis_kelamin;
+        $mentor->asal_institusi = $request->asal_institusi;
+        $mentor->prodi = $request->prodi;
+        $mentor->domisili = $request->domisili;
+        $mentor->user_id = $input_id_user[0]->id;
+        $mentor->save();
+
+        return redirect('/mentor');
     }
 
     /**
