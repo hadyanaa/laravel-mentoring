@@ -27,35 +27,47 @@ Kelola
                     <tbody>
                       <tr>
                         <th scope="row">Nama Mentee</th>
-                        <td>:   Hadyan Abdul Aziz</td>                   
+                        <td>:   {{$mentee->nama_lengkap}}</td>                   
                       </tr>
                       <tr>
                         <th scope="row">Jenis Kelamin</th>
-                        <td>:   Laki-laki</td>
+                        <td>:   {{$mentee->jenis_kelamin}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Asal Institusi</th>
-                        <td>: Sekolah Tinggi Teknologi Terpadu Nurul Fikri</td>
+                        <th scope="row">Tempat Lahir</th>
+                        <td>: {{$mentee->tempat_lahir}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Prodi</th>
-                        <td>: Sistem Informasi</td>
+                        <th scope="row">Tanggal Lahir</th>
+                        <td>: {{$mentee->tgl_lahir}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Alamat Asal</th>
+                        <td>: {{$mentee->alamat_asal}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Domisili</th>
-                        <td>: Depok</td>
+                        <td>: {{$mentee->alamat_domisili}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Aktivitas</th>
-                        <td>: Mahasiswa</td>
+                        <th scope="row">Prodi</th>
+                        <td>: {{$mentee->prodi}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Mentor</th>
-                        <td>: Hadyan</td>
+                        <th scope="row">Nomor HP</th>
+                        <td>: {{$mentee->no_hp}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Mentor</th>
-                        <td>: 2</td>
+                        <th scope="row">Akun Instagram</th>
+                        <td>: {{$mentee->akun_ig}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Nama Kelompok</th>
+                        <td>: {{$kelompok->nama_kelompok}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Nama Mentor</th>
+                        <td>: {{$mentor->nama_mentor}}</td>
                       </tr>
                     </tbody>
                 </table>

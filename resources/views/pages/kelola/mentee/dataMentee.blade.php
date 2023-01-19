@@ -40,15 +40,19 @@ Kelola
                             <td>{{$value->nama_mentor}}</td>
                             <td>{{$value->nama_kelompok}}</td>
                             <td>
-                                <a href="/data-mentee/detail" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                <a href="/mentee/{{$value->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="bi bi-eye text-white"></i> 
                                 </a>
-                                <a href="/presensi-kelompok" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                                <a href="/mentee/{{$value->id}}/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                                     <i class="bi bi-pencil-square text-white"></i> 
                                 </a>
-                                <a href="/presensi-kelompok" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
-                                    <i class="bi bi-trash text-white"></i> 
-                                </a>
+                                <form action="/mentee/{{$value->id}}" method="POST" class="d-none d-sm-inline-block">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                        <i class="bi bi-trash text-white"></i> 
+                                    </button>
+                                </form>
                             </td>                    
                             </tr>                       
                         @empty
