@@ -36,6 +36,9 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+        @guest
+            @include('layout.partial.sidebarGuest')
+        @endguest
         @auth
             @if (Auth::user()->email === "admin@bkpk.com")
                 <!-- Sidebar -->

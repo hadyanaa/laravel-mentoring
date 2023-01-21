@@ -1,7 +1,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon logo-sidebar">
             <img class="logo-sidebar" src="{{asset('template/img/bkpk-sq.png')}}"/>
         </div>
@@ -30,7 +30,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/mentor/isi-presensi">Isi Presensi</a>
+                <a class="collapse-item" href="/presensi/create">Isi Presensi</a>
                 <a class="collapse-item" href="/">Lihat Presensi</a>
             </div>
         </div>

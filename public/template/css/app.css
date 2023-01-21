@@ -1,6 +1,11 @@
 #content {
     min-height: 90vh;
 }
+
+.coming-soon {
+    text-align: center;
+}
+
 .sidebar .sidebar-brand {
     height: 6rem;
     text-decoration: none;

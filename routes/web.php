@@ -36,7 +36,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 // Route Frontend (sementara)
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('home');
 });
 
 Route::get('/dashboard', function(){
@@ -45,6 +45,10 @@ Route::get('/dashboard', function(){
 
 Route::get('/presensi', function(){
     return view('pages.presensi.presensi');
+});
+
+Route::get('/presensi/create', function(){
+    return view('pages.presensiMentor.isiPresensi');
 });
 
 Route::get('/presensi-kelompok', function(){
