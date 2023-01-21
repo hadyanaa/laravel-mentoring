@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\MenteeController;
+use App\Http\Controllers\PresensiController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -29,6 +30,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //CRUD Mentee
     Route::resource('mentee', MenteeController::class);
 });
+
+Route::middleware(['auth'])->group(function () {
+    //CRU Presensi
+    Route::resource('mentee', PresensiController::class);
+
+});
+
 
 
 

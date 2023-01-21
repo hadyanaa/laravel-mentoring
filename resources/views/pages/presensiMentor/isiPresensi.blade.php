@@ -1,4 +1,4 @@
-@extends('layout.masterMentor')
+@extends('layout.master')
 
 @section('heading')
 Presensi
