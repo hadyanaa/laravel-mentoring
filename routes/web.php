@@ -18,7 +18,7 @@ use App\Http\Controllers\MenteeController;
 */
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     //CRUD Mentor
     Route::resource('mentor', MentorController::class);
 
