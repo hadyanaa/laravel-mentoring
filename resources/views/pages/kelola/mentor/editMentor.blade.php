@@ -38,8 +38,8 @@ Kelola
                               <label class="form-label">JENIS KELAMIN</label>
                               <select class="form-control form-select" name="jenis_kelamin">
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="laki-laki" {{$mentor->jenis_kelamin === "laki-laki" ? "selected": ""}}>Laki-laki</option>
-                                <option value="perempuan" {{$mentor->jenis_kelamin === "perempuan" ? "selected": ""}}>Perempuan</option>
+                                <option value="Ikhwan" {{$mentor->jenis_kelamin === "Ikhwan" ? "selected": ""}}>Ikhwan</option>
+                                <option value="Akhwat" {{$mentor->jenis_kelamin === "Akhwat" ? "selected": ""}}>Akhwat</option>
                               </select>
                             </div>
                             @error('jenis_kelamin')

@@ -79,3 +79,6 @@ Route::get('/presensi-kegiatan', function(){
 // });
 
 // Akhir Route Frontend (sementara)
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

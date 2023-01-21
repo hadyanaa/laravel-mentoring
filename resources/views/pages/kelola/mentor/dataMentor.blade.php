@@ -47,9 +47,30 @@ Kelola
                                 <form action="/mentor/{{$item->id}}" method="POST" class="d-none d-sm-inline-block">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                    <button type="button" data-toggle="modal" data-target="#deleteDataMentor" class="btn btn-sm btn-danger shadow-sm">
                                         <i class="bi bi-trash text-white"></i> 
                                     </button>
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="deleteDataMentor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data Mentor</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                            Yakin ingin menghapus data mentor?
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger">Yakin</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </td>                    
                         </tr>

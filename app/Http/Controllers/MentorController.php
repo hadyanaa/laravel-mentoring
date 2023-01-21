@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Mentor;
 use App\Models\User;
 
@@ -52,7 +53,7 @@ class MentorController extends Controller
         $user = new User;
         $user->name = $request->nama_mentor;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->save();
 
         $input_id_user = DB::table('users')

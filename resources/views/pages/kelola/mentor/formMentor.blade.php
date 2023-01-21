@@ -37,8 +37,8 @@ Kelola
                               <label class="form-label">JENIS KELAMIN</label>
                               <select class="form-control form-select" name="jenis_kelamin">
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="laki-laki">Laki-laki</option>
-                                <option value="perempuan">Perempuan</option>
+                                <option value="Ikhwan">Ikhwan</option>
+                                <option value="Akhwat">Akhwat</option>
                               </select>
                             </div>
                             @error('jenis_kelamin')
