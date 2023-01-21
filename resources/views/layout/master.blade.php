@@ -36,10 +36,14 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-        @auth            
-            <!-- Sidebar -->
-            @include('layout.partial.sidebar')
-            <!-- End of Sidebar -->
+        @auth
+            @if (Auth::user()->email === "admin@bkpk.com")
+                <!-- Sidebar -->
+                @include('layout.partial.sidebar')
+            @else
+                @include('layout.partial.sidebarMentor')
+                <!-- End of Sidebar -->
+            @endif            
         @endauth
 
         <!-- Content Wrapper -->
