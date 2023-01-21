@@ -36,10 +36,11 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
-        <!-- Sidebar -->
-        @include('layout.partial.sidebar')
-        <!-- End of Sidebar -->
+        @auth            
+            <!-- Sidebar -->
+            @include('layout.partial.sidebar')
+            <!-- End of Sidebar -->
+        @endauth
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">

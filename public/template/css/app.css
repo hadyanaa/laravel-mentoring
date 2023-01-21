@@ -1,3 +1,6 @@
+#content {
+    min-height: 90vh;
+}
 .sidebar .sidebar-brand {
     height: 6rem;
     text-decoration: none;
