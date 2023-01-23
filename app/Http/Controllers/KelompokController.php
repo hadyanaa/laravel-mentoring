@@ -17,10 +17,6 @@ class KelompokController extends Controller
     public function index()
     {
         $kelompok = Kelompok::all();
-        // $dataKelompok = DB::table('kelompok')
-        //     ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
-        //     ->select('kelompok.*', 'mentor.nama_mentor')
-        //     ->get();
         return view('pages.kelola.kelompok.dataKelompok', compact('kelompok'));
     }
 
@@ -45,7 +41,6 @@ class KelompokController extends Controller
     {
         $request->validate([
             'nama_kelompok' => 'required', 
-            'mentor_id' => 'required',
         ]);
 
         $kelompok = new Kelompok;
@@ -64,13 +59,8 @@ class KelompokController extends Controller
      */
     public function show($id)
     {
-        $dataKelompok = DB::table('kelompok')
-        ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
-        ->select('kelompok.*', 'mentor.nama_mentor')
-        ->where('kelompok.id', '=', $id)
-        ->get();
-
-        return view('pages.kelola.kelompok.detailKelompok', ['dataKelompok'=> $dataKelompok[0]]);
+        $kelompok = Kelompok::find($id);
+        return view('pages.kelola.kelompok.detailKelompok', ['kelompok'=> $kelompok]);
     }
 
     /**
@@ -98,7 +88,6 @@ class KelompokController extends Controller
     {
         $request->validate([
             'nama_kelompok' => 'required', 
-            'mentor_id' => 'required',
         ]);
 
         $kelompok = Kelompok::find($id);

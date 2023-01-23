@@ -34,9 +34,13 @@ Kelola
                         @forelse ($kelompok as $key=>$item)
                         <tr>
                             <td>{{$key + 1}}</td>
+                            @if (isset($item->mentor->nama_mentor))
                             <td>{{$item->mentor->nama_mentor}}</td>
+                            @else
+                            <td>-</td>
+                            @endif
                             <td>{{$item->nama_kelompok}}</td>
-                            <td></td>
+                            <td>{{count($item->mentee)}}</td>
                             <td>
                                 <a href="/kelompok/{{$item->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="bi bi-eye text-white"></i> 

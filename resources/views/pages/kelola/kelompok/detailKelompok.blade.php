@@ -21,13 +21,17 @@ Presensi
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4"><b>Nama Mentor</b></div>
-                            <div class="col-8">{{$dataKelompok->nama_mentor}}</div>
+                            @if (isset($kelompok->mentor->nama_mentor))
+                            <div class="col-8">{{$kelompok->mentor->nama_mentor}}</div>
+                            @else 
+                            <div class="col-8">Tidak ada mentor</div>
+                            @endif
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="row">
                             <div class="col-4"><b>Nama Kelompok</b></div>
-                            <div class="col-8">{{$dataKelompok->nama_kelompok}}</div>
+                            <div class="col-8">{{$kelompok->nama_kelompok}}</div>
                         </div>
                     </div>
                 </div>
@@ -35,20 +39,29 @@ Presensi
                 {{-- Table Presensi --}}
                 <table class="table table-striped mt-4">
                     <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">MENTEE</th>
-                        <th scope="col">PRODI</th>
-                        <th scope="col">STATUS</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">MENTEE</th>
+                            <th scope="col">PRODI</th>
+                            <th scope="col">NO HP</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>TI</td>
-                        <td>HADIR</td>
-                      </tr>
+                        @forelse ($kelompok->mentee as $key=>$item)
+                        <tr>
+                            <th scope="row">{{$key + 1}}</th>
+                            <td>{{$item->nama_lengkap}}</td>
+                            <td>{{$item->prodi}}</td>
+                            <td>{{$item->no_hp}}</td>
+                        </tr>                        
+                        @empty
+                        <tr>
+                            <th scope="row">-</th>
+                            <td>Tidak ada data</td>
+                            <td>Tidak ada data</td>
+                            <td>Tidak ada data</td>
+                        </tr>
+                        @endforelse
                     </tbody>
                   </table>
             </div>
