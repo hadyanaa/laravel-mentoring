@@ -65,9 +65,9 @@ Kelola
                               <label class="form-label">PRODI</label>
                               <select class="form-control form-select" name="prodi">
                                 <option value="">-- Pilih Prodi --</option>
-                                <option value="SI">Sistem Informasi</option>
-                                <option value="TI">Teknik Informatika</option>
-                                <option value="BD">Bisnis Digital</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                                <option value="Bisnis Digital">Bisnis Digital</option>
                               </select>
                             </div>
                             @error('prodi')

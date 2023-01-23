@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('alamat_asal');
             $table->string('alamat_domisili');
             $table->string('prodi');
-            $table->integer('no_hp');
+            $table->bigInteger('no_hp')->length(12)->unsigned();
             $table->string('akun_ig');
-            $table->unsignedBigInteger('kelompok_id');
-            $table->foreign('kelompok_id')->references('id')->on('kelompok');
+            $table->unsignedBigInteger('kelompok_id')->nullable();
+            $table->foreign('kelompok_id')->references('id')->on('kelompok')->onDelete('set null');
             $table->timestamps();
         });
     }

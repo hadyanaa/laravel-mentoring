@@ -16,4 +16,12 @@ class Status extends Model
         'presensi_id',
         'status'
     ];
+
+    public function mentee(){
+        return $this->belongsTo(Mentee::class);
+    }
+
+    public function presensi(){
+        return $this->belongsTo(Presensi::class);
+    }
 }

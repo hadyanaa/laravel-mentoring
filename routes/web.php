@@ -33,7 +33,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     //CRU Presensi
-    Route::resource('mentee', PresensiController::class);
+    Route::resource('presensi', PresensiController::class);
 
 });
 

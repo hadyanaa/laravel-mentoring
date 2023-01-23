@@ -16,11 +16,12 @@ class KelompokController extends Controller
      */
     public function index()
     {
-        $dataKelompok = DB::table('kelompok')
-            ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
-            ->select('kelompok.*', 'mentor.nama_mentor')
-            ->get();
-        return view('pages.kelola.kelompok.dataKelompok', ['dataKelompok'=> $dataKelompok]);
+        $kelompok = Kelompok::all();
+        // $dataKelompok = DB::table('kelompok')
+        //     ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
+        //     ->select('kelompok.*', 'mentor.nama_mentor')
+        //     ->get();
+        return view('pages.kelola.kelompok.dataKelompok', compact('kelompok'));
     }
 
     /**

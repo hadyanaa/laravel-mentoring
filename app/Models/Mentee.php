@@ -23,4 +23,12 @@ class Mentee extends Model
         'akun_ig',
         'kelompok_id',
     ];
+
+    public function kelompok(){
+        return $this->belongsTo(Kelompok::class, 'kelompok_id');
+    }
+
+    public function status(){
+        return $this->hasMany(Status::class, 'mentee_id');
+    }
 }

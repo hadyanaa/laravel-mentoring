@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('materi');
             $table->date('tanggal');
             $table->unsignedBigInteger('kelompok_id');
-            $table->foreign('kelompok_id')->references('id')->on('kelompok');
+            $table->foreign('kelompok_id')->references('id')->on('kelompok')->onDelete('cascade');
             $table->timestamps();
         });
     }

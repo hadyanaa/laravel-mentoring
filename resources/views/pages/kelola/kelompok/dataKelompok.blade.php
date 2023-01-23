@@ -31,10 +31,10 @@ Kelola
                       </tr>
                     </thead>
                     <tbody>
-                        @forelse ($dataKelompok as $key=>$item)
+                        @forelse ($kelompok as $key=>$item)
                         <tr>
                             <td>{{$key + 1}}</td>
-                            <td>{{$item->nama_mentor}}</td>
+                            <td>{{$item->mentor->nama_mentor}}</td>
                             <td>{{$item->nama_kelompok}}</td>
                             <td></td>
                             <td>

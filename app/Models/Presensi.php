@@ -16,4 +16,12 @@ class Presensi extends Model
         'tanggal',
         'kelompok_id'
     ];
+
+    public function kelompok(){
+        return $this->belongsTo(Kelompok::class, 'kelompok_id');
+    }
+
+    public function status(){
+        return $this->hasMany(Status::class, 'presensi_id');
+    }
 }

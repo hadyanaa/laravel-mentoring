@@ -47,12 +47,13 @@ Kelola
                                 <form action="/mentor/{{$item->id}}" method="POST" class="d-none d-sm-inline-block">
                                     @csrf
                                     @method('delete')
-                                    <button type="button" data-toggle="modal" data-target="#deleteDataMentor" class="btn btn-sm btn-danger shadow-sm">
+                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm">Yakin</button>
+                                    {{-- <button type="button" data-toggle="modal" data-target="#deleteDataMentor" class="btn btn-sm btn-danger shadow-sm">
                                         <i class="bi bi-trash text-white"></i> 
-                                    </button>
+                                    </button> --}}
                                     
                                     <!-- Modal -->
-                                    <div class="modal fade" id="deleteDataMentor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    {{-- <div class="modal fade" id="deleteDataMentor" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -70,7 +71,7 @@ Kelola
                                             </div>
                                         </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </td>                    
                         </tr>

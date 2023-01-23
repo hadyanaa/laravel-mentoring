@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('kelompok', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelompok');
-            $table->unsignedBigInteger('mentor_id');
-            $table->foreign('mentor_id')->references('id')->on('mentor');
+            $table->unsignedBigInteger('mentor_id')->nullable();
+            $table->foreign('mentor_id')->references('id')->on('mentor')->onDelete('set null');
             $table->timestamps();
         });
     }
