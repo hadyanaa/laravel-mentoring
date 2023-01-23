@@ -29,38 +29,29 @@ Presensi
                       </tr>
                     </thead>
                     <tbody>
+                      @forelse ($presensi as $key=>$item)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>90%</td>
+                        <th scope="row">{{$key + 1}}</th>
+                        <td>{{$item->kelompok->mentor->nama_mentor}}</td>
+                        <td>{{$item->kelompok->nama_kelompok}}</td>
+                        <td>{{count($item->status)}}</td>
                         <td>
                             <a href="/presensi-kelompok">
                                 <button type="button" class="btn btn-primary btn-sm">LIHAT</button>
                             </a>
                         </td>                    
                       </tr>
+                      @empty
                       <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>90%</td>
+                        <th scope="row">-</th>
+                        <td>Tidak ada data</td>
+                        <td>Tidak ada data</td>
+                        <td>Tidak ada data</td>
                         <td>
-                            <a href="/presensi-kelompok">
-                                <button type="button" class="btn btn-primary btn-sm">LIHAT</button>
-                            </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>90%</td>
-                        <td>
-                            <a href="/presensi-kelompok">
-                                <button type="button" class="btn btn-primary btn-sm">LIHAT</button>
-                            </a>
-                        </td>
-                      </tr>
+                          Tidak ada aksi
+                        </td>                    
+                      </tr>        
+                      @endforelse
                     </tbody>
                   </table>
             </div>

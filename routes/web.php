@@ -51,13 +51,13 @@ Route::get('/dashboard', function(){
     return view('pages.dashboard');
 });
 
-Route::get('/presensi', function(){
-    return view('pages.presensi.presensi');
-});
+// Route::get('/presensi', function(){
+//     return view('pages.presensi.presensi');
+// });
 
-Route::get('/presensi/create', function(){
-    return view('pages.presensiMentor.isiPresensi');
-});
+// Route::get('/presensi/create', function(){
+//     return view('pages.presensiMentor.isiPresensi');
+// });
 
 Route::get('/presensi-kelompok', function(){
     return view('pages.presensi.presensiKelompok');
