@@ -18,11 +18,7 @@ class MenteeController extends Controller
      */
     public function index()
     {
-        $dataMentee = DB::table('mentee')
-        ->join('kelompok', 'mentee.kelompok_id', '=', 'kelompok.id')
-        ->join('mentor', 'kelompok.mentor_id', '=', 'mentor.id')
-        ->select('mentee.*', 'kelompok.nama_kelompok', 'mentor.nama_mentor')
-        ->get();
+        $dataMentee = Mentee::all();
         return view('pages.kelola.mentee.dataMentee', ['dataMentee'=> $dataMentee]);
     }
 

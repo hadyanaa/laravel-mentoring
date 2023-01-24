@@ -6,7 +6,9 @@ use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Mentor;
+use App\Models\Mentee;
+use App\Models\Kelompok;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,14 +37,22 @@ Route::middleware(['auth'])->group(function () {
     //CRU Presensi
     Route::resource('presensi', PresensiController::class);
 
+    //CRU Presensi by mentor
+    Route::get('/presensi-kelompok', function(){
+        $userId = Auth::user()->id;
+        $mentorId = Mentor::where('user_id', $userId)->first();
+        $kelompok = Kelompok::where('mentor_id', $mentorId->id)->get();
+        return view('pages.presensiMentor.kelompokMentor', ['kelompok'=> $kelompok]);
+    });
+    
+    Route::get('/presensi-kelompok/{id}/create', function($id){
+        $kelompok = Kelompok::find($id);
+        $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
+        return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok, 'mentee'=>$mentee]);
+    });
 });
 
-
-
-
-
 // Route Frontend (sementara)
-
 Route::get('/', function () {
     return view('home');
 });
@@ -51,23 +61,6 @@ Route::get('/dashboard', function(){
     return view('pages.dashboard');
 });
 
-// Route::get('/presensi', function(){
-//     return view('pages.presensi.presensi');
-// });
-
-// Route::get('/presensi/create', function(){
-//     return view('pages.presensiMentor.isiPresensi');
-// });
-
-Route::get('/presensi-kelompok', function(){
-    return view('pages.presensi.presensiKelompok');
-});
-
-Route::get('/presensi-kegiatan', function(){
-    return view('pages.presensi.presensiKegiatan');
-});
-
-// Akhir Route Frontend (sementara)
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

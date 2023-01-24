@@ -23,15 +23,8 @@ Presensi
               {{-- Pilih Kelompok --}}
               <div class="row my-2">
                   <div class="col-2">Kelompok</div>
-                  <div class="col-4">
-                    <select class="form-control form-select" name="kelompok_id">
-                      <option value="">-- Pilih Kelompok --</option>
-                      @forelse ($kelompok as $item)
-                      <option value="{{$item->id}}">{{$item->nama_kelompok}}</option>
-                      @empty
-                      <option value="">Tidak ada kelompok</option>
-                      @endforelse
-                    </select>
+                  <div class="col-4">{{$kelompok->nama_kelompok}}
+                    <input type="text" name="kelompok_id" value="{{$kelompok->id}}" class="form-control" hidden> 
                   </div>
               </div>
 
@@ -72,14 +65,38 @@ Presensi
                     </tr>
                   </thead>
                   <tbody>
+                    @forelse ($mentee as $key=>$item)
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>TI</td>
-                      <td>HADIR</td>
+                      <td>{{$item->id}} 
+                        <input type="text" name="mentee_id[]" value="{{$item->id}}" class="form-control" hidden>
+                      </td>
+                      <td>{{$item->nama_lengkap}}</td>
+                      <td>{{$item->prodi}}</td>
+                      <td>       
+                        <select class="form-control form-select col-6" name="status[]">
+                          <option value="Hadir">Hadir</option>
+                          <option value="Izin">Izin</option>
+                          <option value="Sakit">Sakit</option>
+                        </select>
+                      </td>
                     </tr>
+                    @empty
+                    <tr>
+                      <th scope="row">-</th>
+                      <td>Tidak ada data</td>
+                      <td>Tidak ada data</td>
+                      <td>Tidak ada data</td>
+                    </tr>
+                    @endforelse
                   </tbody>
               </table>
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4 text-right">
+                  <button type="submit" class="btn btn-primary mr-3">Submit</button>
+                </div>
+              </div>
             </form>
           </div>
         </div>

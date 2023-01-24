@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Presensi;
 use App\Models\Mentor;
 use App\Models\Kelompok;
+use DateTime;
 
 class PresensiController extends Controller
 {
@@ -17,9 +18,6 @@ class PresensiController extends Controller
      */
     public function index()
     {
-        // $presensiId = Auth::user()->id;
-        // $mentor = Mentor::where('user_id', $presensiId);
-        // return view('pages.presensiMentor.isiPresensi');
         $presensi = Presensi::all();
         return view('pages.presensi.presensi', compact('presensi'));
     }
@@ -31,10 +29,10 @@ class PresensiController extends Controller
      */
     public function create()
     {
-        $userId = Auth::user()->id;
-        $mentorId = Mentor::where('user_id', $userId)->first();
-        $kelompok = Kelompok::where('mentor_id', $mentorId->id)->get();
-        return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok]);
+        // $userId = Auth::user()->id;
+        // $mentorId = Mentor::where('user_id', $userId)->first();
+        // $kelompok = Kelompok::where('mentor_id', $mentorId->id)->get();
+        // return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok]);
     }
 
     /**
@@ -45,7 +43,30 @@ class PresensiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'materi' => 'required', 
+            'tanggal' => 'required',
+            'kelompok_id' => 'required',
+            'mentee_id' => 'required',
+            'status' => 'required'
+        ]);
+
+        // $tgl = date_format(new DateTime($request->tanggal), 'Y-m-d H:i:s');
+
+        // $presensi = new Presensi;
+        // $presensi->materi = $request->materi;
+        // $presensi->tanggal = $tgl;
+        // $presensi->kelompok_id = $request->kelompok_id;
+        // $presensi->save();
+
+        $mentee_id = $request->mentee_id;
+        $status = $request->status;
+        $dataStatus = [
+            'mentee_id'=>$mentee_id,
+            'status'=>$status
+        ];
+
+        return dd($dataStatus);
     }
 
     /**

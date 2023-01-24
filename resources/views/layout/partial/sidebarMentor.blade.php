@@ -30,7 +30,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/presensi/create">Isi Presensi</a>
+                <a class="collapse-item" href="/presensi-kelompok">Isi Presensi</a>
                 <a class="collapse-item" href="/">Lihat Presensi</a>
             </div>
         </div>

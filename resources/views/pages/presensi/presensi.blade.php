@@ -24,7 +24,7 @@ Presensi
                         <th scope="col">#</th>
                         <th scope="col">MENTOR</th>
                         <th scope="col">KELOMPOK</th>
-                        <th scope="col">PERSENTASE KEHADIRAN</th>
+                        <th scope="col">KEHADIRAN</th>
                         <th scope="col">AKSI</th>
                       </tr>
                     </thead>
