@@ -17,10 +17,6 @@ Presensi
           </div>
           <!-- Card Body -->
           <div class="card-body">
-            <form action="/presensi" method="POST">
-            @csrf
-              
-              {{-- Pilih Kelompok --}}
               <div class="row my-2">
                   <div class="col-2">Kelompok</div>
                   <div class="col-4">{{$presensi->kelompok->nama_kelompok}} 
@@ -75,14 +71,6 @@ Presensi
                     @endforelse
                   </tbody>
               </table>
-              <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4 text-right">
-                  <button type="submit" class="btn btn-primary mr-3">Submit</button>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
     </div>

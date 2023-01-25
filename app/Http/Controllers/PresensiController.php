@@ -19,7 +19,7 @@ class PresensiController extends Controller
      */
     public function index()
     {
-        $presensi = Presensi::all()->sortByDesc('id');
+        $presensi = Presensi::all();
         return view('pages.presensi.presensi', compact('presensi'));
     }
 
