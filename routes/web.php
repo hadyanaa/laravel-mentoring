@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Mentor;
 use App\Models\Mentee;
 use App\Models\Kelompok;
+use App\Models\Presensi;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,12 @@ Route::middleware(['auth'])->group(function () {
         $kelompok = Kelompok::find($id);
         $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
         return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok, 'mentee'=>$mentee]);
+    });
+
+    Route::get('/presensi-kelompok/{id}/lihat', function($id){
+        $kelompok = Kelompok::find($id);
+        $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
+        return view('pages.presensiMentor.presensiMentor', ['kelompok'=> $kelompok, 'presensi'=> $presensi]);
     });
 });
 

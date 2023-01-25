@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Presensi;
-use App\Models\Mentor;
-use App\Models\Kelompok;
+use App\Models\Status;
+// use App\Models\Mentor;
+// use App\Models\Kelompok;
 use DateTime;
 
 class PresensiController extends Controller
@@ -51,22 +52,33 @@ class PresensiController extends Controller
             'status' => 'required'
         ]);
 
-        // $tgl = date_format(new DateTime($request->tanggal), 'Y-m-d H:i:s');
+        $tgl = date_format(new DateTime($request->tanggal), 'Y-m-d H:i:s');
 
-        // $presensi = new Presensi;
-        // $presensi->materi = $request->materi;
-        // $presensi->tanggal = $tgl;
-        // $presensi->kelompok_id = $request->kelompok_id;
-        // $presensi->save();
+        $presensi = new Presensi;
+        $presensi->materi = $request->materi;
+        $presensi->tanggal = $tgl;
+        $presensi->kelompok_id = $request->kelompok_id;
+        $presensi->save();
+
 
         $mentee_id = $request->mentee_id;
         $status = $request->status;
-        $dataStatus = [
-            'mentee_id'=>$mentee_id,
-            'status'=>$status
-        ];
+        for ($i=0; $i<count($mentee_id);$i++)
+        {
+            $dataStatus = [
+                'mentee_id'=>$mentee_id[$i],
+                'status'=>$status[$i]
+            ];
 
-        return dd($dataStatus);
+            $statusHadir = new Status;
+            $statusHadir->mentee_id = $dataStatus['mentee_id'];
+            $statusHadir->status = $dataStatus['status'];
+            $statusHadir->presensi_id = $presensi->id;
+            $statusHadir->save();
+        }
+
+        // return dd($dataStatus);
+        return redirect('/presensi-kelompok');
     }
 
     /**

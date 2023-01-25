@@ -17,10 +17,13 @@ Presensi
           </div>
           <!-- Card Body -->
           <div class="card-body">
-            <h5>{{(count($item->presensi)/14)*100}}x Kehadiran</h5>
+            <h5>{{count($item->presensi)}}x Kehadiran</h5>
             <h5>{{count($item->mentee)}} Anggota</h5>
             <a href="/presensi-kelompok/{{$item->id}}/create" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm mt-4">
                 Isi Presensi
+            </a>
+            <a href="/presensi-kelompok/{{$item->id}}/lihat" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm mt-4">
+              Lihat Presensi
             </a>
           </div>
         </div>

@@ -37,7 +37,7 @@ Kelola
                             <th scope="row">{{$key+1}}</th>
                             <td>{{$value->nama_lengkap}}</td>
                             <td>{{$value->jenis_kelamin}}</td>
-                            <td>{{$value->mentor->nama_mentor ?? '-'}}</td>
+                            <td>{{$value->kelompok->mentor->nama_mentor ?? '-'}}</td>
                             <td>{{$value->kelompok->nama_kelompok ?? '-'}}</td>
                             <td>
                                 <a href="/mentee/{{$value->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
