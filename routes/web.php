@@ -5,6 +5,7 @@ use App\Http\Controllers\MentorController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\PresensiMentorController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Mentor;
 use App\Models\Mentee;
@@ -39,24 +40,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('presensi', PresensiController::class);
 
     //CRU Presensi by mentor
-    Route::get('/presensi-kelompok', function(){
-        $userId = Auth::user()->id;
-        $mentorId = Mentor::where('user_id', $userId)->first();
-        $kelompok = Kelompok::where('mentor_id', $mentorId->id)->get();
-        return view('pages.presensiMentor.kelompokMentor', ['kelompok'=> $kelompok]);
-    });
+    Route::get('/presensi-kelompok', [PresensiMentorController::class, 'view']);
     
-    Route::get('/presensi-kelompok/{id}/create', function($id){
-        $kelompok = Kelompok::find($id);
-        $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
-        return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok, 'mentee'=>$mentee]);
-    });
+    Route::get('/presensi-kelompok/{id}/create', [PresensiMentorController::class, 'create']);
 
-    Route::get('/presensi-kelompok/{id}/lihat', function($id){
-        $kelompok = Kelompok::find($id);
-        $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
-        return view('pages.presensiMentor.presensiMentor', ['kelompok'=> $kelompok, 'presensi'=> $presensi]);
-    });
+    Route::get('/presensi-kelompok/{id}/lihat', [PresensiMentorController::class, 'show']);
 });
 
 // Route Frontend (sementara)
