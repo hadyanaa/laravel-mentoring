@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Presensi;
 use App\Models\Status;
-// use App\Models\Mentor;
+use App\Models\Mentee;
 // use App\Models\Kelompok;
 use DateTime;
 
@@ -19,7 +19,7 @@ class PresensiController extends Controller
      */
     public function index()
     {
-        $presensi = Presensi::all();
+        $presensi = Presensi::all()->sortByDesc('id');
         return view('pages.presensi.presensi', compact('presensi'));
     }
 
@@ -76,8 +76,7 @@ class PresensiController extends Controller
             $statusHadir->presensi_id = $presensi->id;
             $statusHadir->save();
         }
-
-        // return dd($dataStatus);
+        
         return redirect('/presensi-kelompok');
     }
 
@@ -89,7 +88,9 @@ class PresensiController extends Controller
      */
     public function show($id)
     {
-        //
+        $presensi = Presensi::find($id);
+        $mentee = Mentee::where('kelompok_id', $presensi->kelompok->id)->get();
+        return view('pages.presensiMentor.detailPresensi', ['presensi'=> $presensi, 'mentee'=> $mentee]);
     }
 
     /**

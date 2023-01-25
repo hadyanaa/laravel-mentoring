@@ -38,7 +38,7 @@ Presensi
                         <td>{{$item->kelompok->nama_kelompok}}</td>
                         <td>{{count($item->status)}}</td>
                         <td>
-                            <a href="/presensi-kelompok"  class="d-none d-sm-inline-block btn btn-sm btn-primary">
+                            <a href="/presensi/{{$item->id}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary">
                               <i class="bi bi-eye text-white"></i> 
                             </a>
                             <a href="/presensi-kelompok"  class="d-none d-sm-inline-block btn btn-sm btn-success">
