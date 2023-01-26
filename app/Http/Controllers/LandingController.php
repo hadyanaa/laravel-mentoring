@@ -9,6 +9,13 @@ use App\Models\User;
 
 class LandingController extends Controller
 {
+    public function dashboard($id)
+    {
+        $mentor = Mentor::find($id);
+        $user = User::find($mentor->user_id);
+        return view('pages.dashboard', ['mentor'=> $mentor, 'user'=> $user]);
+    }
+
     public function profile($id)
     {
         $mentor = Mentor::find($id);
@@ -48,6 +55,6 @@ class LandingController extends Controller
         $mentor->domisili = $request->domisili;
         $mentor->update();
 
-        return redirect('/dashboard');
+        return redirect()->action([LandingController::class, 'profile'],['id'=>$user->id]);
     }
 }

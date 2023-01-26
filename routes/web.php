@@ -51,6 +51,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/{id}/edit', [LandingController::class, 'edit']);
 
     Route::put('/profile/{id}', [LandingController::class, 'update']);
+
+    Route::get('/dashboard/{id}', [LandingController::class, 'dashboard']); 
 });
 
 // Route Frontend (sementara)
@@ -58,9 +60,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function(){
-    return view('pages.dashboard');
-});
 
 Auth::routes();
 

@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Presensi;
 use App\Models\Status;
 use App\Models\Mentee;
-// use App\Models\Kelompok;
 use DateTime;
 
 class PresensiController extends Controller
