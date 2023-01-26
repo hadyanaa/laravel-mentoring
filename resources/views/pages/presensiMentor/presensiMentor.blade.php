@@ -41,7 +41,7 @@ Presensi
                             <a href="/presensi/{{$item->id}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary">
                               <i class="bi bi-eye text-white"></i> 
                             </a>
-                            <a href="/presensi-kelompok"  class="d-none d-sm-inline-block btn btn-sm btn-success">
+                            <a href="/presensi-kelompok/{{$item->id}}/edit"  class="d-none d-sm-inline-block btn btn-sm btn-success">
                               <i class="bi bi-pencil-square text-white"></i> 
                             </a>
                         </td>

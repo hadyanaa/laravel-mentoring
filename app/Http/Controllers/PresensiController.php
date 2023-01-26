@@ -113,7 +113,40 @@ class PresensiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'materi' => 'required', 
+            'tanggal' => 'required',
+            'kelompok_id' => 'required',
+            'mentee_id' => 'required',
+            'status' => 'required'
+        ]);
+
+        $tgl = date_format(new DateTime($request->tanggal), 'Y-m-d H:i:s');
+
+        $presensi = Presensi::find($id);
+        $presensi->materi = $request->materi;
+        $presensi->tanggal = $tgl;
+        $presensi->kelompok_id = $request->kelompok_id;
+        $presensi->update();
+
+
+        $mentee_id = $request->mentee_id;
+        $status = $request->status;
+        for ($i=0; $i<count($mentee_id);$i++)
+        {
+            $dataStatus = [
+                'mentee_id'=>$mentee_id[$i],
+                'status'=>$status[$i]
+            ];
+
+            $statusHadir = Status::where('mentee_id', $dataStatus['mentee_id']);
+            // $statusHadir->mentee_id = $dataStatus['mentee_id'];
+            // $statusHadir->status = $dataStatus['status'];
+            // $statusHadir->presensi_id = $presensi->id;
+            $statusHadir->update(['status'=>$status[$i]]);
+        }
+        
+        return redirect('/presensi-kelompok');
     }
 
     /**

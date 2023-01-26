@@ -45,6 +45,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/presensi-kelompok/{id}/create', [PresensiMentorController::class, 'create']);
 
     Route::get('/presensi-kelompok/{id}/lihat', [PresensiMentorController::class, 'show']);
+
+    Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
 });
 
 // Route Frontend (sementara)
