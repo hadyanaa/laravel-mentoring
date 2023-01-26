@@ -3,14 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\KelompokController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\PresensiMentorController;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Mentor;
-use App\Models\Mentee;
-use App\Models\Kelompok;
-use App\Models\Presensi;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +44,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/presensi-kelompok/{id}/lihat', [PresensiMentorController::class, 'show']);
 
     Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
+
+    // Read and update Profile
+    Route::get('/profile/{id}', [LandingController::class, 'profile']);
+
+    Route::get('/profile/{id}/edit', [LandingController::class, 'edit']);
 });
 
 // Route Frontend (sementara)
