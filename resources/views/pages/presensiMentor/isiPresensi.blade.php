@@ -67,7 +67,7 @@ Presensi
                   <tbody>
                     @forelse ($mentee as $key=>$item)
                     <tr>
-                      <td>{{$item->id}} 
+                      <td>{{$key+1}} 
                         <input type="text" name="mentee_id[]" value="{{$item->id}}" class="form-control" hidden>
                       </td>
                       <td>{{$item->nama_lengkap}}</td>

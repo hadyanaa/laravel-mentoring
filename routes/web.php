@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/{id}', [LandingController::class, 'profile']);
 
     Route::get('/profile/{id}/edit', [LandingController::class, 'edit']);
+
+    Route::put('/profile/{id}', [LandingController::class, 'update']);
 });
 
 // Route Frontend (sementara)

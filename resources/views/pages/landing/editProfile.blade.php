@@ -17,7 +17,7 @@ Kelola
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form action="/mentor/{{$mentor->id}}" method="POST">
+                <form action="/profile/{{Auth::user()->id}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -106,9 +106,9 @@ Kelola
                                 <label class="form-label">PASSWORD</label>
                                 <input type="text" class="form-control" name="password" value="{{$user->password}}" disabled>  
                             </div>
-                            @error('password')
+                            {{-- @error('password')
                                 <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                            @enderror --}}
                         </div>
 
                         {{-- Input Domisili Mentor --}}
