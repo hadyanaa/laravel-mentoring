@@ -5,15 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Mentor;
+use App\Models\Mentee;
 use App\Models\User;
+use App\Models\Presensi;
+use App\Models\Kelompok;
 
 class LandingController extends Controller
 {
     public function dashboard($id)
     {
+        $kelompok = Kelompok::all();
+        $mentee = Mentee::all();
+        $presensi = Presensi::all();
+        $mentorall = Mentor::all();
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
-        return view('pages.dashboard', ['mentor'=> $mentor, 'user'=> $user]);
+        return view('pages.dashboard.dashboard', [
+            'mentor'=> $mentor, 
+            'mentorall'=> $mentorall, 
+            'user'=> $user, 
+            'kelompok'=> $kelompok,
+            'mentee'=> $mentee,
+            'presensi'=> $presensi
+        ]);
     }
 
     public function profile($id)
