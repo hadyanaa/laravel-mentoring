@@ -7,6 +7,7 @@ use App\Models\Presensi;
 use App\Models\Status;
 use App\Models\Mentee;
 use DateTime;
+use Tdanandeh\SweetAlert\SweetAlert;
 
 class PresensiController extends Controller
 {
@@ -75,6 +76,7 @@ class PresensiController extends Controller
             $statusHadir->save();
         }
         
+        SweetAlert::success('Berhasil menambahkan presensi', 'Tambah presensi');
         return redirect('/presensi-kelompok');
     }
 
@@ -144,6 +146,7 @@ class PresensiController extends Controller
             $statusHadir->update(['status'=>$status[$i]]);
         }
         
+        SweetAlert::success('Berhasil mengedit presensi', 'Edit presensi');
         return redirect('/presensi-kelompok');
     }
 

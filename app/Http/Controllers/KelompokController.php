@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Kelompok;
 use App\Models\Mentor;
 
+use Tdanandeh\SweetAlert\SweetAlert;
+
 class KelompokController extends Controller
 {
     /**
@@ -48,6 +50,7 @@ class KelompokController extends Controller
         $kelompok->mentor_id = $request->mentor_id;
         $kelompok->save();
 
+        SweetAlert::success('Berhasil menambahkan kelompok', 'Tambah Kelompok');
         return redirect("/kelompok");
     }
 
@@ -95,6 +98,7 @@ class KelompokController extends Controller
         $kelompok->mentor_id = $request->mentor_id;
         $kelompok->update();
 
+        SweetAlert::success('Berhasil mengedit kelompok', 'Edit Kelompok');
         return redirect('/kelompok');
     }
 
@@ -108,7 +112,8 @@ class KelompokController extends Controller
     {
         $kelompok = Kelompok::find($id);
         $kelompok->delete();
-
+        
+        SweetAlert::success('Berhasil menghapus kelompok', 'Hapus Kelompok');
         return redirect('/kelompok');
     }
 }

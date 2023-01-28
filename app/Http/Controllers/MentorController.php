@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Mentor;
 use App\Models\User;
+use Tdanandeh\SweetAlert\SweetAlert;
 
 class MentorController extends Controller
 {
@@ -70,6 +71,7 @@ class MentorController extends Controller
         $mentor->user_id = $input_id_user[0]->id;
         $mentor->save();
 
+        SweetAlert::success('Berhasil menambahkan mentor', 'Tambah mentor');
         return redirect('/mentor');
     }
 
@@ -135,6 +137,7 @@ class MentorController extends Controller
         $mentor->domisili = $request->domisili;
         $mentor->update();
 
+        SweetAlert::success('Berhasil mengedit mentor', 'Edit mentor');
         return redirect('/mentor');
     }
 
@@ -152,6 +155,7 @@ class MentorController extends Controller
         $mentor->delete();
         $user->delete();
 
+        SweetAlert::success('Berhasil menghapus mentor', 'Hapus mentor');
         return redirect('/mentor');
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Tdanandeh\SweetAlert\SweetAlert;
 use App\Models\Kelompok;
 use App\Models\Mentee;
 use App\Models\Mentor;
@@ -69,6 +69,7 @@ class MenteeController extends Controller
         $mentee->kelompok_id = $request->kelompok_id;
         $mentee->save();
 
+        SweetAlert::success('Berhasil menambahkan mentee', 'Tambah Mentee');
         return redirect('/mentee');
     }
 
@@ -137,6 +138,7 @@ class MenteeController extends Controller
         $mentee->kelompok_id = $request->kelompok_id;
         $mentee->update();
 
+        SweetAlert::success('Berhasil mengedit mentee', 'Edit mentee');
         return redirect('/mentee');
     }
 
@@ -151,6 +153,7 @@ class MenteeController extends Controller
         $mentee = Mentee::find($id);
         $mentee->delete();
 
+        SweetAlert::success('Berhasil menghapus mentee', 'Hapus mentee');
         return redirect('/mentee');
     }
 }
