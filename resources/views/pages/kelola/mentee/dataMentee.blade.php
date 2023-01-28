@@ -49,7 +49,7 @@ Kelola
                                 <form action="/mentee/{{$value->id}}" method="POST" class="d-none d-sm-inline-block">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm show_confirm">
                                         <i class="bi bi-trash text-white"></i> 
                                     </button>
                                 </form>

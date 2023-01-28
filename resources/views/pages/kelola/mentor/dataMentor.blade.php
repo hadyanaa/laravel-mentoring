@@ -47,7 +47,7 @@ Kelola
                                 <form action="/mentor/{{$item->id}}" method="POST" class="d-none d-sm-inline-block">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                    <button type="submit" class="btn btn-sm btn-danger shadow-sm show_confirm">
                                         <i class="bi bi-trash text-white"></i> 
                                     </button>
                                     {{-- <button type="button" data-toggle="modal" data-target="#deleteDataMentor" class="btn btn-sm btn-danger shadow-sm">
