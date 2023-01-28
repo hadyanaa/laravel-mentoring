@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
+use Tdanandeh\SweetAlert\SweetAlert;
+
 class LoginController extends Controller
 {
     /*
@@ -44,6 +46,7 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->flush();
         $request->session()->regenerate();
+        SweetAlert::info('Anda telah logout', 'Logout');
         return redirect('/login');
     }
 }

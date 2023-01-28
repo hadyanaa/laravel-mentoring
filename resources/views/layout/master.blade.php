@@ -30,10 +30,13 @@
     <!-- Custom icons for this template-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
+    {{-- Sweet alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body id="page-top">
-
+    @include('sweet::alert')
     <!-- Page Wrapper -->
     <div id="wrapper">
         @guest

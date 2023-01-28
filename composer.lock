@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf53a63afc28e1ede6335182b90e37b1",
+    "content-hash": "2e26b3e3d01fbf561ee9a6d0e6516c80",
     "packages": [
         {
             "name": "brick/math",
@@ -5496,6 +5496,73 @@
             "time": "2022-12-03T22:32:58+00:00"
         },
         {
+            "name": "tdanandeh/sweet-alert",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tdanandeh/sweet-alert.git",
+                "reference": "ed4a2e17f633041d33b4217526d0b7f45f6e1bb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tdanandeh/sweet-alert/zipball/ed4a2e17f633041d33b4217526d0b7f45f6e1bb1",
+                "reference": "ed4a2e17f633041d33b4217526d0b7f45f6e1bb1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "~5.0|^6.0|^7.0|^8.0|^9.0",
+                "illuminate/support": "~5.0|^6.0|^7.0|^8.0|^9.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.9.0",
+                "mockery/mockery": "^1.4.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tdanandeh\\SweetAlert\\SweetAlertServiceProvider"
+                    ],
+                    "aliases": {
+                        "Alert": "Tdanandeh\\SweetAlert\\SweetAlert"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/SweetAlert/functions.php"
+                ],
+                "psr-4": {
+                    "Tdanandeh\\SweetAlert\\": "src/SweetAlert/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tohid Danandeh",
+                    "email": "tdanandeh@yahoo.com"
+                }
+            ],
+            "description": "A simple PHP package to show Sweet Alerts with the Laravel Framework",
+            "keywords": [
+                "alert",
+                "laravel",
+                "notifier",
+                "sweet"
+            ],
+            "support": {
+                "issues": "https://github.com/tdanandeh/sweet-alert/issues",
+                "source": "https://github.com/tdanandeh/sweet-alert/tree/main"
+            },
+            "time": "2022-07-24T13:33:51+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.5",
             "source": {
@@ -8276,7 +8343,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "tdanandeh/sweet-alert": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

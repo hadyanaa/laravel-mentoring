@@ -10,6 +10,8 @@ use App\Models\User;
 use App\Models\Presensi;
 use App\Models\Kelompok;
 
+use Tdanandeh\SweetAlert\SweetAlert;
+
 class LandingController extends Controller
 {
     public function dashboard($id)
@@ -20,6 +22,7 @@ class LandingController extends Controller
         $mentorall = Mentor::all();
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
+        SweetAlert::message('Robots are working!');
         return view('pages.dashboard.dashboard', [
             'mentor'=> $mentor, 
             'mentorall'=> $mentorall, 
