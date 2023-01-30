@@ -36,8 +36,28 @@ class PresensiMentorController extends Controller
     public function show($id)
     {
         $kelompok = Kelompok::find($id);
+        $mentee = Mentee::where('kelompok_id', $id)->get();
         $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
-        return view('pages.presensiMentor.presensiMentor', ['kelompok'=> $kelompok, 'presensi'=> $presensi]);
+
+        // Code untuk mendapatkan statistik
+        // $menghadiri = Status::where('mentee_id', $mentee[1]->id)->where('status','Izin')->get();
+        // foreach ($mentee as $m){
+        //     $hadir = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
+        //     $sakit = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
+        //     $izin = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
+        // }
+        // $statistik = [];
+        // for ($i=0, $i<count($mentee); $i++){
+        //     Status::where('status', 'Hadir')
+        // };
+
+        // return dd($menghadiri);
+
+        return view('pages.presensiMentor.presensiMentor', [
+            'kelompok'=> $kelompok, 
+            'presensi'=> $presensi,
+            'mentee'=> $mentee
+        ]);
     }
 
     public function edit($id)

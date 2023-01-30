@@ -139,7 +139,7 @@ class PresensiController extends Controller
                 'status'=>$status[$i]
             ];
 
-            $statusHadir = Status::where('mentee_id', $dataStatus['mentee_id']);
+            $statusHadir = Status::where('mentee_id', $dataStatus['mentee_id'])->where('presensi_id', $presensi->id);
             // $statusHadir->mentee_id = $dataStatus['mentee_id'];
             // $statusHadir->status = $dataStatus['status'];
             // $statusHadir->presensi_id = $presensi->id;
