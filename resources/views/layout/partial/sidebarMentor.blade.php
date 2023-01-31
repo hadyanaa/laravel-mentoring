@@ -25,14 +25,6 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="/presensi-kelompok">
             <i class="bi bi-clipboard-data"></i>
-            <span>Presensi</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="fas fa-fw fa-wrench"></i>
             <span>Data Kelompok</span>
         </a>
     </li>

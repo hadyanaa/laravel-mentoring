@@ -96,10 +96,10 @@ Presensi
                       <th scope="row">{{$key + 1}}</th>
                       <td>{{$item->nama_lengkap}}</td>
                       <td>{{count($presensi)}}</td>
-                      <td>{{$item->status}}</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-%</td>
+                      <td>{{$hadir[$key]}}</td>
+                      <td>{{$izin[$key]}}</td>
+                      <td>{{$sakit[$key]}}</td>
+                      <td>{{$keaktifan[$key]}}%</td>
                                           
                     </tr>
                     @empty

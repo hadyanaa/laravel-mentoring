@@ -129,7 +129,6 @@ class PresensiController extends Controller
         $presensi->kelompok_id = $request->kelompok_id;
         $presensi->update();
 
-
         $mentee_id = $request->mentee_id;
         $status = $request->status;
         for ($i=0; $i<count($mentee_id);$i++)
@@ -138,11 +137,7 @@ class PresensiController extends Controller
                 'mentee_id'=>$mentee_id[$i],
                 'status'=>$status[$i]
             ];
-
             $statusHadir = Status::where('mentee_id', $dataStatus['mentee_id'])->where('presensi_id', $presensi->id);
-            // $statusHadir->mentee_id = $dataStatus['mentee_id'];
-            // $statusHadir->status = $dataStatus['status'];
-            // $statusHadir->presensi_id = $presensi->id;
             $statusHadir->update(['status'=>$status[$i]]);
         }
         
