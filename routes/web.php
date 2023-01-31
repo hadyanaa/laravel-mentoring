@@ -43,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/presensi-kelompok/{id}/lihat', [PresensiMentorController::class, 'show']);
 
+    Route::get('/presensi-kelompok/{id}/lihat-statistik', [PresensiMentorController::class, 'stat']);
+
     Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
 
     // Read and update Profile

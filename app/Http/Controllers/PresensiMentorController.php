@@ -39,23 +39,28 @@ class PresensiMentorController extends Controller
         $mentee = Mentee::where('kelompok_id', $id)->get();
         $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
 
+        return view('pages.presensiMentor.presensiMentor', [
+            'kelompok'=> $kelompok, 
+            'presensi'=> $presensi,
+            'mentee'=> $mentee
+        ]);
+    }
+
+    public function stat($id)
+    {
+        $kelompok = Kelompok::find($id);
+        $mentee = Mentee::where('kelompok_id', $id)->get();
+        $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
+
         // Code untuk mendapatkan statistik
-        // $menghadiri = Status::where('mentee_id', $mentee[1]->id)->where('status','Izin')->get();
         foreach ($mentee as $key=>$m){
             $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
             $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
             $izin[$key] = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
-            $keaktifan[$key] = ($hadir[$key]*100)/count($presensi);
+            $keaktifan[$key] = number_format(($hadir[$key]*100)/count($presensi),2);
         }
-        // for ($i=0, $i<count($mentee); $i++){
-        //     $hadir[$i] = count(Status::where('status', 'Hadir')->where('mentee_id', $mentee[$i]->id)->get());
-        //     $izin[$i] = count(Status::where('status', 'Izin')->where('mentee_id', $mentee[$i]->id)->get());
-        //     $sakit[$i] = count(Status::where('status', 'Sakit')->where('mentee_id', $mentee[$i]->id)->get());
-        // };
 
-        // return dd($sakit);
-
-        return view('pages.presensiMentor.presensiMentor', [
+        return view('pages.presensiMentor.statistik', [
             'kelompok'=> $kelompok, 
             'presensi'=> $presensi,
             'mentee'=> $mentee,

@@ -25,6 +25,9 @@ Presensi
             <a href="/presensi-kelompok/{{$item->id}}/lihat" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm mt-4">
               Lihat Presensi
             </a>
+            <a href="/presensi-kelompok/{{$item->id}}/lihat-statistik" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mt-4">
+              <i class="bi bi-bar-chart"></i> Lihat Statistik
+            </a>
           </div>
         </div>
     </div>
