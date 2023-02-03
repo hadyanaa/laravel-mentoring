@@ -23,17 +23,10 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link" href="/presensi">
             <i class="bi bi-clipboard-data"></i>
-            <span>Presensi</span>
+            <span>Lihat Presensi</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="/presensi">Lihat Presensi</a>
-                <a class="collapse-item" href="/">Rekap Presensi Kelompok</a>
-            </div>
-        </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
