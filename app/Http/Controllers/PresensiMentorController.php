@@ -53,22 +53,30 @@ class PresensiMentorController extends Controller
         $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
 
         // Code untuk mendapatkan statistik
-        foreach ($mentee as $key=>$m){
-            $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
-            $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
-            $izin[$key] = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
-            $keaktifan[$key] = number_format(($hadir[$key]*100)/count($presensi),2);
+        if (count($presensi) > 0){
+            foreach ($mentee as $key=>$m){
+                $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
+                $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
+                $izin[$key] = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
+                $keaktifan[$key] = number_format(($hadir[$key]*100)/count($presensi),2);
+            }
+    
+            return view('pages.presensiMentor.statistik', [
+                'kelompok'=> $kelompok, 
+                'presensi'=> $presensi,
+                'mentee'=> $mentee,
+                'hadir' => $hadir,
+                'sakit' => $sakit,
+                'izin' => $izin,
+                'keaktifan' => $keaktifan
+            ]);
+        } else {
+            return view('pages.presensiMentor.statistik', [
+                'kelompok'=> $kelompok, 
+                'presensi'=> $presensi,
+                'mentee'=> $mentee
+            ]);
         }
-
-        return view('pages.presensiMentor.statistik', [
-            'kelompok'=> $kelompok, 
-            'presensi'=> $presensi,
-            'mentee'=> $mentee,
-            'hadir' => $hadir,
-            'sakit' => $sakit,
-            'izin' => $izin,
-            'keaktifan' => $keaktifan
-        ]);
     }
 
     public function edit($id)

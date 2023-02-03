@@ -26,8 +26,10 @@ Kelola
                         <th scope="col">#</th>
                         <th scope="col">NAMA MENTOR</th>
                         <th scope="col">NAMA KELOMPOK</th>
+                        <th scope="col">JUMLAH PERTEMUAN</th>
                         <th scope="col">JUMLAH ANGGOTA</th>
                         <th scope="col">AKSI</th>
+                        <th scope="col">STATISTIK</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -40,6 +42,7 @@ Kelola
                             <td>-</td>
                             @endif
                             <td>{{$item->nama_kelompok}}</td>
+                            <td>{{count($item->presensi)}}</td>
                             <td>{{count($item->mentee)}}</td>
                             <td>
                                 <a href="/kelompok/{{$item->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
@@ -55,6 +58,11 @@ Kelola
                                         <i class="bi bi-trash text-white"></i> 
                                     </button>
                                 </form>
+                            </td>
+                            <td>
+                                <a href="/presensi-kelompok/{{$item->id}}/lihat-statistik" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm ml-2">
+                                    <i class="bi bi-bar-chart"></i> Lihat Statistik
+                                </a>
                             </td>                    
                         </tr>
                             
