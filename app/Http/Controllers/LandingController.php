@@ -21,13 +21,28 @@ class LandingController extends Controller
         $mentorall = Mentor::all();
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
+
+        // Dashboard Milik mentor
+        $totalkelompok = Kelompok::where('mentor_id', $id)->get();
+        $totalmentee = 0;
+        $totalpresensi = 0;
+        foreach ($totalkelompok as $tk){
+            $tmentee = count(Mentee::where('kelompok_id', $tk->id)->get());
+            $totalmentee += $tmentee;
+            $tpresensi = count(Presensi::where('kelompok_id', $tk->id)->get());
+            $totalpresensi += $tpresensi;
+        }
+
         return view('pages.dashboard.dashboard', [
             'mentor'=> $mentor, 
             'mentorall'=> $mentorall, 
             'user'=> $user, 
             'kelompok'=> $kelompok,
             'mentee'=> $mentee,
-            'presensi'=> $presensi
+            'presensi'=> $presensi,
+            'totalkelompok' => $totalkelompok,
+            'totalmentee' => $totalmentee,
+            'totalpresensi' => $totalpresensi
         ]);
     }
 

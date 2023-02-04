@@ -22,9 +22,6 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    //CRU Presensi
-    Route::resource('presensi', PresensiController::class);
-    
     //CRUD Mentor
     Route::resource('mentor', MentorController::class);
 
@@ -36,6 +33,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    //CRU Presensi
+    Route::resource('presensi', PresensiController::class);
+    
     //CRU Presensi by mentor
     Route::get('/presensi-kelompok', [PresensiMentorController::class, 'view']);
     
