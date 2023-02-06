@@ -14,7 +14,7 @@ Kelola
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Profile</h6>
-                <a href="/profile/{{$user->id}}/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                <a href="/profile/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                     <i class="bi bi-pencil-square text-white-50"></i> EDIT
                 </a>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Mentor;
 use App\Models\Mentee;
 use App\Models\User;
@@ -13,8 +14,9 @@ use App\Models\Kelompok;
 
 class LandingController extends Controller
 {
-    public function dashboard($id)
+    public function dashboard()
     {
+        $id = Auth::user()->id;
         $kelompok = Kelompok::all();
         $mentee = Mentee::all();
         $presensi = Presensi::all();
@@ -46,15 +48,17 @@ class LandingController extends Controller
         ]);
     }
 
-    public function profile($id)
+    public function profile()
     {
+        $id = Auth::user()->id;
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
         return view('pages.landing.profile', ['mentor'=> $mentor, 'user'=> $user]);
     }
 
-    public function edit($id)
+    public function edit()
     {
+        $id = Auth::user()->id;
         $mentor = Mentor::find($id);
         $user = User::find($mentor->user_id);
         return view('pages.landing.editProfile', ['mentor'=> $mentor, 'user'=> $user]);

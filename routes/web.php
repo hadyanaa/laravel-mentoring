@@ -48,13 +48,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
 
     // Read and update Profile
-    Route::get('/profile/{id}', [LandingController::class, 'profile']);
+    Route::get('/profile', [LandingController::class, 'profile']);
 
-    Route::get('/profile/{id}/edit', [LandingController::class, 'edit']);
+    Route::get('/profile/edit', [LandingController::class, 'edit']);
 
     Route::put('/profile/{id}', [LandingController::class, 'update']);
 
-    Route::get('/dashboard/{id}', [LandingController::class, 'dashboard']); 
+    Route::get('/dashboard', [LandingController::class, 'dashboard']); 
 });
 
 // Route Frontend (sementara)
