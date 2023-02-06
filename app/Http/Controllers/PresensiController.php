@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Presensi;
 use App\Models\Status;
 use App\Models\Mentee;
@@ -18,8 +19,12 @@ class PresensiController extends Controller
      */
     public function index()
     {
-        $presensi = Presensi::all();
-        return view('pages.presensi.presensi', compact('presensi'));
+        if (Auth::user()->email == "admin@bkpk.com"){
+            $presensi = Presensi::all();
+            return view('pages.presensi.presensi', compact('presensi'));
+        } else {
+            return view('home');
+        }
     }
 
     /**
@@ -88,9 +93,13 @@ class PresensiController extends Controller
      */
     public function show($id)
     {
-        $presensi = Presensi::find($id);
-        $mentee = Mentee::where('kelompok_id', $presensi->kelompok->id)->get();
-        return view('pages.presensiMentor.detailPresensi', ['presensi'=> $presensi, 'mentee'=> $mentee]);
+        if (Auth::user()->email == "admin@bkpk.com"){
+            $presensi = Presensi::find($id);
+            $mentee = Mentee::where('kelompok_id', $presensi->kelompok->id)->get();
+            return view('pages.presensiMentor.detailPresensi', ['presensi'=> $presensi, 'mentee'=> $mentee]);
+        } else {
+            return view('home');
+        }
     }
 
     /**

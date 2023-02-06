@@ -17,7 +17,7 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->email === "admin@bkpk.com"){
+        if (Auth::user()->email == "admin@bkpk.com"){
             return $next($request);
         }
 
