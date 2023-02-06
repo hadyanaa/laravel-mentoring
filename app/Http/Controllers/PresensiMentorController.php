@@ -28,63 +28,87 @@ class PresensiMentorController extends Controller
 
     public function create($id)
     {
+        $userId = Auth::user()->id;
+        $mentorId = Mentor::where('user_id', $userId)->first();
         $kelompok = Kelompok::find($id);
-        $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
-        return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok, 'mentee'=>$mentee]);
+        if ($mentorId->id == $kelompok->mentor_id){
+            $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
+            return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok, 'mentee'=>$mentee]);
+        } else {
+            return view('home');
+        };
     }
 
     public function show($id)
     {
+        $userId = Auth::user()->id;
+        $mentorId = Mentor::where('user_id', $userId)->first();
         $kelompok = Kelompok::find($id);
-        $mentee = Mentee::where('kelompok_id', $id)->get();
-        $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
-
-        return view('pages.presensiMentor.presensiMentor', [
-            'kelompok'=> $kelompok, 
-            'presensi'=> $presensi,
-            'mentee'=> $mentee
-        ]);
-    }
-
-    public function stat($id)
-    {
-        $kelompok = Kelompok::find($id);
-        $mentee = Mentee::where('kelompok_id', $id)->get();
-        $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
-
-        // Code untuk mendapatkan statistik
-        if (count($presensi) > 0){
-            foreach ($mentee as $key=>$m){
-                $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
-                $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
-                $izin[$key] = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
-                $keaktifan[$key] = number_format(($hadir[$key]*100)/count($presensi),2);
-            }
+        if ($mentorId->id == $kelompok->mentor_id){
+            $mentee = Mentee::where('kelompok_id', $id)->get();
+            $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
     
-            return view('pages.presensiMentor.statistik', [
-                'kelompok'=> $kelompok, 
-                'presensi'=> $presensi,
-                'mentee'=> $mentee,
-                'hadir' => $hadir,
-                'sakit' => $sakit,
-                'izin' => $izin,
-                'keaktifan' => $keaktifan
-            ]);
-        } else {
-            return view('pages.presensiMentor.statistik', [
+            return view('pages.presensiMentor.presensiMentor', [
                 'kelompok'=> $kelompok, 
                 'presensi'=> $presensi,
                 'mentee'=> $mentee
             ]);
+        } else {
+            return view('home');
+        }
+    }
+
+    public function stat($id)
+    {
+        $userId = Auth::user()->id;
+        $mentorId = Mentor::where('user_id', $userId)->first();
+        $kelompok = Kelompok::find($id);
+        if ($mentorId->id == $kelompok->mentor_id){
+            $mentee = Mentee::where('kelompok_id', $id)->get();
+            $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
+    
+            // Code untuk mendapatkan statistik
+            if (count($presensi) > 0){
+                foreach ($mentee as $key=>$m){
+                    $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
+                    $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
+                    $izin[$key] = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
+                    $keaktifan[$key] = number_format(($hadir[$key]*100)/count($presensi),2);
+                }
+        
+                return view('pages.presensiMentor.statistik', [
+                    'kelompok'=> $kelompok, 
+                    'presensi'=> $presensi,
+                    'mentee'=> $mentee,
+                    'hadir' => $hadir,
+                    'sakit' => $sakit,
+                    'izin' => $izin,
+                    'keaktifan' => $keaktifan
+                ]);
+            } else {
+                return view('pages.presensiMentor.statistik', [
+                    'kelompok'=> $kelompok, 
+                    'presensi'=> $presensi,
+                    'mentee'=> $mentee
+                ]);
+            }
+        } else {
+            return view('home');
         }
     }
 
     public function edit($id)
     {
+        $userId = Auth::user()->id;
+        $mentorId = Mentor::where('user_id', $userId)->first();
         $presensi = Presensi::find($id);
         $kelompok = Kelompok::where('id', $presensi->kelompok_id)->first();
-        $status = Status::where('presensi_id', $presensi->id)->get();
-        $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
-        return view('pages.presensiMentor.editPresensi', ['kelompok'=> $kelompok, 'presensi'=> $presensi, 'mentee'=> $mentee, 'status'=> $status]);
+        if ($mentorId->id == $kelompok->mentor_id){
+            $status = Status::where('presensi_id', $presensi->id)->get();
+            $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
+            return view('pages.presensiMentor.editPresensi', ['kelompok'=> $kelompok, 'presensi'=> $presensi, 'mentee'=> $mentee, 'status'=> $status]);
+        } else {
+            return view('home');
+        }
     }
 }
