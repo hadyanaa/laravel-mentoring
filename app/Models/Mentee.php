@@ -19,6 +19,7 @@ class Mentee extends Model
         'alamat_asal',
         'alamat_domisili',
         'prodi',
+        'angkatan',
         'no_hp',
         'akun_ig',
         'kelompok_id',

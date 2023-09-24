@@ -44,14 +44,15 @@ class MenteeController extends Controller
         $request->validate([
             'nama_lengkap' => 'required', 
             'jenis_kelamin' => 'required',
-            'tempat_lahir' => 'required',
-            'tgl_lahir' => 'required',
+            'tempat_lahir' => '',
+            'tgl_lahir' => '',
             'no_hp' => 'required|numeric',
             'prodi' => 'required',
-            'alamat_domisili' => 'required',
-            'alamat_asal' => 'required',
-            'akun_ig' => 'required',
-            'kelompok_id' => 'required'
+            'angkatan' => 'required',
+            'alamat_domisili' => '',
+            'alamat_asal' => '',
+            'akun_ig' => '',
+            'kelompok_id' => ''
         ]);
 
         $tanggal_lahir = date_format(new DateTime($request->tgl_lahir), 'Y-m-d H:i:s');
@@ -62,6 +63,7 @@ class MenteeController extends Controller
         $mentee->tempat_lahir = $request->tempat_lahir;
         $mentee->tgl_lahir = $tanggal_lahir;
         $mentee->prodi = $request->prodi;
+        $mentee->angkatan = $request->angkatan;
         $mentee->no_hp = $request->no_hp;
         $mentee->alamat_domisili = $request->alamat_domisili;
         $mentee->alamat_asal = $request->alamat_asal;
@@ -113,14 +115,15 @@ class MenteeController extends Controller
         $request->validate([
             'nama_lengkap' => 'required', 
             'jenis_kelamin' => 'required',
-            'tempat_lahir' => 'required',
-            'tgl_lahir' => 'required',
+            'tempat_lahir' => '',
+            'tgl_lahir' => '',
             'no_hp' => 'required|numeric',
             'prodi' => 'required',
-            'alamat_domisili' => 'required',
-            'alamat_asal' => 'required',
-            'akun_ig' => 'required',
-            'kelompok_id' => 'required'
+            'angkatan' => 'required',
+            'alamat_domisili' => '',
+            'alamat_asal' => '',
+            'akun_ig' => '',
+            'kelompok_id' => ''
         ]);
 
         $tanggal_lahir = date_format(new DateTime($request->tgl_lahir), 'Y-m-d H:i:s');
@@ -131,6 +134,7 @@ class MenteeController extends Controller
         $mentee->tempat_lahir = $request->tempat_lahir;
         $mentee->tgl_lahir = $tanggal_lahir;
         $mentee->prodi = $request->prodi;
+        $mentee->angkatan = $request->angkatan;
         $mentee->no_hp = $request->no_hp;
         $mentee->alamat_domisili = $request->alamat_domisili;
         $mentee->alamat_asal = $request->alamat_asal;

@@ -11,7 +11,7 @@
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{count($kelompok)}}</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <i class="fas fa-users fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{count($mentorall)}}</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-user-secret fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{count($mentee)}}</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-user fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{count($presensi)}}</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        <i class="fas fa-list fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
