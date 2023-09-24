@@ -22,7 +22,7 @@ Informasi
                         <h1 class="coming-soon">
                             <i class="bi bi-cone fa-2x"></i>
                         </h1>
-                        <h3 class="coming-soon">Coming Soon</h3>
+                        <h3 class="coming-soon">Berita 1</h3>
                     </div>
                     <div class="col"></div>
                 </div>
