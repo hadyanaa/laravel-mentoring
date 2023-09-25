@@ -24,39 +24,31 @@ Kelola
                         <div class="col-6">
                             <div class="mb-3">
                               <label class="form-label">NAMA MENTOR</label>
-                              <input type="text" name="nama_mentor" class="form-control">  
+                              <input type="text" name="nama_mentor" class="form-control" required>  
                             </div>
-                            @error('nama_mentor')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
+                        {{-- Input No Telpon Mentor --}}
+                        {{-- Disabled untuk sementara --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">NO TELPON</label>
+                                <input type="text" class="form-control" required> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">                        
                         {{-- Input Jenis Kelamin Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
                               <label class="form-label">JENIS KELAMIN</label>
-                              <select class="form-control form-select" name="jenis_kelamin">
+                              <select class="form-control form-select" name="jenis_kelamin" required>
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="Ikhwan">Ikhwan</option>
-                                <option value="Akhwat">Akhwat</option>
+                                <option value="Ikhwan">Laki-laki</option>
+                                <option value="Akhwat">Perempuan</option>
                               </select>
                             </div>
-                            @error('jenis_kelamin')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        {{-- Input Institusi Mentor --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                              <label class="form-label">ASAL INSTITUSI</label>
-                              <input type="text" class="form-control" name="asal_institusi">  
-                            </div>
-                            @error('asal_institusi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Prodi Mentor --}}
@@ -77,6 +69,17 @@ Kelola
                     </div>
 
                     <div class="row">
+                        {{-- Input Institusi Mentor --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                              <label class="form-label">ASAL INSTITUSI</label>
+                              <input type="text" class="form-control" name="asal_institusi">  
+                            </div>
+                            @error('asal_institusi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         {{-- Input Email Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
@@ -87,29 +90,9 @@ Kelola
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        {{-- Input Aktivitas Mentor --}}
-                        {{-- Disabled untuk sementara --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">AKTIVITAS</label>
-                                <input type="text" class="form-control" readonly> 
-                            </div>
-                        </div>
                     </div>
 
                     <div class="row">
-                        {{-- Input Password Mentor --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">PASSWORD</label>
-                                <input type="password" class="form-control" name="password">  
-                            </div>
-                            @error('password')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                         {{-- Input Domisili Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
@@ -119,6 +102,14 @@ Kelola
                             @error('domisili')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                        </div>
+
+                        {{-- Input Password Mentor --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">PASSWORD</label>
+                                <input type="password" class="form-control" name="password" required>  
+                            </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

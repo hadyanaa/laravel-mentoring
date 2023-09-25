@@ -16,13 +16,25 @@ Informasi
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col">
-                        <h1 class="coming-soon">
-                            <i class="bi bi-cone fa-2x"></i>
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-xxl-12 text-center">
+                    <h1 class="coming-soon">
+                            <!-- <i class="bi bi-cone fa-2x"></i> -->
+                            <img class="img-fluid" src="{{asset('template/img/undraw_posting_photo.svg')}}" alt="">
                         </h1>
-                        <h3 class="coming-soon">Berita 1</h3>
+                    </div>
+                    <div class="col-xl-8 col-xxl-12">
+                        <div class="mb-4 mb-xl-0 mb-xxl-4">
+                            <h1 class="text-primary">Info Materi Mentoring</h3>
+                            <p class="text-gray-700 mb-4">
+                            Untuk materi mentoring bisa dilihat di link google drive berikut. Materi ini bersifat referensi dan tidak mengikat, jika ingin menyampaikan dengan bahasa sendiri dipersilakan.
+                            <br><br>
+                            Disclaimer: Hanya untuk kalangan Mentor. Dilarang menyebarluaskan materi tanpa seizin pihak BKPK.
+                            </p>
+                            <a href="https://drive.google.com/drive/folders/1GUGxQqsvkKoqutXSqb79kcQtJOIzTTj3?usp=sharing" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                Link Materi
+                            </a>
+                        </div>    
                     </div>
                     <div class="col"></div>
                 </div>
