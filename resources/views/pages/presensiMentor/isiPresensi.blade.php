@@ -31,18 +31,18 @@ Presensi
               <div class="row my-3">
                   <div class="col-6">
                       <div class="row">
-                          <div class="col-4"><b>Materi</b></div>
+                          <div class="col-4"><b>Materi*</b></div>
                           <div class="col-8">
-                            <input type="text" name="materi" class="form-control"> 
+                            <input type="text" name="materi" class="form-control" required> 
                           </div>
                       </div>
                   </div>
                   <div class="col-6">
                       <div class="row">
-                          <div class="col-4"><b>Tanggal</b></div>
+                          <div class="col-4"><b>Tanggal*</b></div>
                           <div class="col-8">
                             <div class="input-group date">
-                              <input data-provide="datepicker" type="text" class="form-control" name="tanggal">
+                              <input data-provide="datepicker" type="text" class="form-control" name="tanggal" required>
                               <div class="input-group-append">
                                   <span class="input-group-text" id="basic-addon2">
                                       <i class="bi bi-calendar-date"></i>

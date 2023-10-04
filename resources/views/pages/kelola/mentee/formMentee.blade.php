@@ -152,8 +152,21 @@ Kelola
                             @enderror -->
                         </div>
 
-                        {{-- Input Kelompok Mentoring --}}
+                        {{-- Input Angkatan Mentee --}}
                         <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">ANGKATAN*</label>
+                                <input type="text" class="form-control" name="angkatan" required>  
+                            </div>
+                            <!-- @error('akun_ig')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{-- Input Kelompok Mentoring --}}
+                        <div class="col-12">
                             <div class="mb-3">
                                 <label class="form-label">KELOMPOK MENTORING*</label>
                                 <select class="form-control form-select" name="kelompok_id">
