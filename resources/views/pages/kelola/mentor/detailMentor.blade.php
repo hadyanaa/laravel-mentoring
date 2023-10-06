@@ -17,7 +17,7 @@ Kelola
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <table class="table table-striped mt-4">
+                <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col"></th>
@@ -42,20 +42,20 @@ Kelola
                         <td>: {{$mentor->prodi}}</td>
                       </tr>
                       <tr>
+                        <th scope="row">Domisili</th>
+                        <td>: {{$mentor->domisili}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">No Telpon</th>
+                        <td>: {{$mentor->no_telpon}}</td>
+                      </tr>
+                      <tr>
                         <th scope="row">Email</th>
                         <td>: {{$user->email}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Password</th>
                         <td>: {{$user->password}}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Aktivitas</th>
-                        <td>: Mahasiswa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Domisili</th>
-                        <td>: {{$mentor->domisili}}</td>
                       </tr>
                     </tbody>
                 </table>

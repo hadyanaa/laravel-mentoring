@@ -20,14 +20,14 @@ Kelola
             <!-- Card Body -->
             <div class="card-body">
                 {{-- Table Mentor --}}
-                <table class="table table-striped mt-4">
+                <table class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">MENTOR</th>
-                        <th scope="col">JENIS KELAMIN</th>
-                        <th scope="col">PRODI</th>
-                        <th scope="col">AKSI</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Jenis Kelamin</th>
+                        <th scope="col">Prodi</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>

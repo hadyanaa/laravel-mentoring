@@ -44,9 +44,10 @@ class MentorController extends Controller
         $request->validate([
             'nama_mentor' => 'required', 
             'jenis_kelamin' => 'required',
-            'asal_institusi' => 'required',
-            'prodi' => 'required',
-            'domisili' => 'required',
+            'asal_institusi' => '',
+            'prodi' => '',
+            'domisili' => '',
+            'no_telpon' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required'
         ]);
@@ -68,6 +69,7 @@ class MentorController extends Controller
         $mentor->asal_institusi = $request->asal_institusi;
         $mentor->prodi = $request->prodi;
         $mentor->domisili = $request->domisili;
+        $mentor->no_telpon = $request->no_telpon;
         $mentor->user_id = $input_id_user[0]->id;
         $mentor->save();
 
@@ -121,6 +123,7 @@ class MentorController extends Controller
             'asal_institusi' => 'required',
             'prodi' => 'required',
             'domisili' => 'required',
+            'no_telpon' => 'required',
             'email' => ['required', Rule::unique('users')->ignore($user->id)],
             'password' => 'required'
         ]); 
@@ -135,6 +138,7 @@ class MentorController extends Controller
         $mentor->asal_institusi = $request->asal_institusi;
         $mentor->prodi = $request->prodi;
         $mentor->domisili = $request->domisili;
+        $mentor->no_telpon = $request->no_telpon;
         $mentor->update();
 
         SweetAlert::success('Berhasil mengedit mentor', 'Edit mentor');

@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama_mentor');
             $table->string('jenis_kelamin');
-            $table->string('asal_institusi');
-            $table->string('prodi');
-            $table->string('domisili');
+            $table->string('asal_institusi')->nullable();
+            $table->string('prodi')->nullable();
+            $table->string('domisili')->nullable();
+            $table->string('no_telpon')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

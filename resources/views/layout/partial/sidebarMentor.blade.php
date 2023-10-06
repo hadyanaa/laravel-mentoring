@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon logo-sidebar">
-            <img class="logo-sidebar" src="{{asset('template/img/bkpk-sq.png')}}"/>
+            <img class="logo-sidebar" src="{{asset('template/img/bkpk-w.png')}}"/>
         </div>
         <div class="sidebar-brand-text mx-3">BKPK STTNF</div>
     </a>

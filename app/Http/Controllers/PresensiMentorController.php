@@ -73,6 +73,7 @@ class PresensiMentorController extends Controller
                     $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
                     $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
                     $izin[$key] = count(Status::where('mentee_id', $m->id)->where('status','Izin')->get());
+                    $alpa[$key] = count(Status::where('mentee_id', $m->id)->where('status','Alpa')->get());
                     $keaktifan[$key] = number_format(($hadir[$key]*100)/count($presensi),2);
                 }
         
@@ -83,6 +84,7 @@ class PresensiMentorController extends Controller
                     'hadir' => $hadir,
                     'sakit' => $sakit,
                     'izin' => $izin,
+                    'alpa' => $alpa,
                     'keaktifan' => $keaktifan
                 ]);
             } else {

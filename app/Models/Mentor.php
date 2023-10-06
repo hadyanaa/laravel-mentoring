@@ -17,6 +17,7 @@ class Mentor extends Model
         'asal_institusi',
         'prodi',
         'domisili',
+        'no_telpon',
         'user_id'
     ];
 

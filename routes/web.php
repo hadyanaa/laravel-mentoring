@@ -7,6 +7,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\PresensiMentorController;
+use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -30,6 +31,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //CRUD Mentee
     Route::resource('mentee', MenteeController::class);
+
+    //CRUD Info
+    Route::resource('info', InfoController::class);
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -37,6 +41,17 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('presensi', PresensiController::class);
     
     //CRU Presensi by mentor
+    Route::get('/presensi-kelompok', [PresensiMentorController::class, 'view']);
+    
+    Route::get('/presensi-kelompok/{id}/create', [PresensiMentorController::class, 'create']);
+
+    Route::get('/presensi-kelompok/{id}/lihat', [PresensiMentorController::class, 'show']);
+
+    Route::get('/presensi-kelompok/{id}/lihat-statistik', [PresensiMentorController::class, 'stat']);
+
+    Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
+
+    //CRU Info
     Route::get('/presensi-kelompok', [PresensiMentorController::class, 'view']);
     
     Route::get('/presensi-kelompok/{id}/create', [PresensiMentorController::class, 'create']);
