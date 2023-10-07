@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('heading')
-Informasi
+Kelola Berita
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@ Informasi
             <!-- Card Header -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Edit Informasi</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Edit Berita</h6>
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form action="/info/{{$info->id}}" method="POST">
+                <form action="/berita/{{$berita->id}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -25,7 +25,7 @@ Informasi
                         <div class="col-6">
                             <div class="mb-3">
                                 <label class="form-label">Judul</label>
-                                <input type="text" name="judul" class="form-control" value="{{$info->judul}}" required>
+                                <input type="text" name="judul" class="form-control" value="{{$berita->judul}}" required>
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@ Informasi
                         <div class="col-6">
                             <div class="mb-3">
                               <label class="form-label">Sumber</label>
-                              <input type="text" name="sumber" class="form-control" value="{{$info->sumber}}" required>  
+                              <input type="text" name="sumber" class="form-control" value="{{$berita->sumber}}" required>  
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ Informasi
                         <div class="col-12">
                             <div class="mb-3">
                               <label class="form-label">Detail Konten</label>
-                              <input type="text" name="konten_info" class="form-control" value="{{$info->konten_info}}" required>  
+                              <input type="text" name="konten_berita" class="form-control" value="{{$berita->konten_berita}}" required>  
                             </div>
                         </div>
                     </div>

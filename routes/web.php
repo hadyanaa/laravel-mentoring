@@ -7,8 +7,9 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\PresensiMentorController;
-use App\Http\Controllers\InfoController;
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Berita;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('mentee', MenteeController::class);
 
     //CRUD Info
-    Route::resource('info', InfoController::class);
+    Route::resource('kelola-berita', BeritaController::class);
+    
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -51,16 +53,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
 
-    //CRU Info
-    Route::get('/presensi-kelompok', [PresensiMentorController::class, 'view']);
-    
-    Route::get('/presensi-kelompok/{id}/create', [PresensiMentorController::class, 'create']);
+    //CRU Berita    
+    // Route::get('/kelola-berita/{id}/create', [BeritaController::class, 'create']);
 
-    Route::get('/presensi-kelompok/{id}/lihat', [PresensiMentorController::class, 'show']);
+    // Route::get('/kelola-berita/{id}/lihat', [BeritaController::class, 'show']);
 
-    Route::get('/presensi-kelompok/{id}/lihat-statistik', [PresensiMentorController::class, 'stat']);
-
-    Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
+    // Route::get('/kelola-berita/{id}/edit', [BeritaController::class, 'edit']);
 
     // Read and update Profile
     Route::get('/profile', [LandingController::class, 'profile']);
@@ -74,9 +72,10 @@ Route::middleware(['auth'])->group(function () {
 
 // Route Frontend (sementara)
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+        "dataBerita" => Berita::all()
+    ]);
 });
-
 
 Auth::routes();
 

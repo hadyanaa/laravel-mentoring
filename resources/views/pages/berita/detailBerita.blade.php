@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('heading')
-Informasi
+Kelola Berita
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@ Informasi
         <div class="card shadow mb-4">
             <!-- Card Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Detail Informasi</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Detail Berita</h6>
             </div>
             <!-- Card Body -->
             <div class="card-body">
@@ -20,23 +20,23 @@ Informasi
                     <tbody>
                       <tr>
                         <th style="white-space:nowrap; width:1%" scope="row">Judul</th>
-                        <td>:   {{$info->judul}}</td>                   
+                        <td>:   {{$berita->judul}}</td>                   
                       </tr>
                       <tr>
                         <th style="white-space:nowrap; width:1%" scope="row">Sumber</th>
-                        <td>:   {{$info->sumber}}</td>
+                        <td>:   {{$berita->sumber}}</td>
                       </tr>
                       <tr>
                         <th style="white-space:nowrap; width:1%" scope="row">Created Date</th>
-                        <td>:   {{$info->created_at}}</td>
+                        <td>:   {{$berita->created_at}}</td>
                       </tr>
                       <tr>
                         <th style="white-space:nowrap; width:1%" scope="row">Last Update</th>
-                        <td>:   {{$info->updated_at}}</td>
+                        <td>:   {{$berita->updated_at}}</td>
                       </tr>
                       <tr>
                         <th style="white-space:nowrap; width:1%" scope="row">Detail Konten</th>
-                        <td>:   {{$info->konten_info}}</td>
+                        <td>:   {{$berita->konten_berita}}</td>
                       </tr>
                       <tr>
                         <th style="white-space:nowrap; width:1%" scope="row">Gambar</th>

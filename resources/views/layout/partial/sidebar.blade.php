@@ -11,11 +11,19 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+    </li>
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard</span>
+        </a>
     </li>
 
     <!-- Divider -->
@@ -24,16 +32,16 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="/presensi">
-            <i class="bi bi-clipboard-data"></i>
+            <i class="fas fa-chart-bar"></i>
             <span>Lihat Presensi</span>
         </a>
     </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="/info">
-            <i class="bi bi-clipboard-data"></i>
-            <span>Info Management</span>
+        <a class="nav-link" href="/kelola-berita">
+            <i class="fas fa-newspaper"></i>
+            <span>Kelola Berita</span>
         </a>
     </li>
 
@@ -41,8 +49,8 @@
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Kelola</span>
+            <i class="fas fa-folder-open"></i>
+            <span>Kelola Data</span>
         </a>
         <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">

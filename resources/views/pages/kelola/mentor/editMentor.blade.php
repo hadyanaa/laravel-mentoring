@@ -35,8 +35,8 @@ Kelola
                               <label class="form-label">JENIS KELAMIN*</label>
                               <select class="form-control form-select" name="jenis_kelamin" required>
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="Ikhwan" {{$mentor->jenis_kelamin === "Ikhwan" ? "selected": ""}}>Ikhwan</option>
-                                <option value="Akhwat" {{$mentor->jenis_kelamin === "Akhwat" ? "selected": ""}}>Akhwat</option>
+                                <option value="Laki-laki" {{$mentor->jenis_kelamin === "Laki-laki" ? "selected": ""}}>Laki-laki</option>
+                                <option value="Perempuan" {{$mentor->jenis_kelamin === "Perempuan" ? "selected": ""}}>Perempuan</option>
                               </select>
                             </div>
                         </div>
@@ -49,9 +49,6 @@ Kelola
                               <label class="form-label">ASAL INSTITUSI</label>
                               <input type="text" class="form-control" name="asal_institusi" value="{{$mentor->asal_institusi}}">  
                             </div>
-                            @error('asal_institusi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Prodi Mentor --}}
@@ -80,7 +77,7 @@ Kelola
                         {{-- Input No Telpon Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label class="form-label">NO TELPON</label>
+                                <label class="form-label">NO TELPON*</label>
                                 <input type="text" class="form-control" name="no_telpon" value="{{$mentor->no_telpon}}" required> 
                             </div>
                         </div>
@@ -91,7 +88,7 @@ Kelola
                         <div class="col-6">
                             <div class="mb-3">
                                 <label class="form-label">EMAIL*</label>
-                                <input type="email" class="form-control" name="email" value="{{$user->email}}">  
+                                <input type="email" class="form-control" name="email" value="{{$user->email}}" required>  
                             </div>
                         </div>
 
@@ -99,7 +96,7 @@ Kelola
                         <div class="col-6">
                             <div class="mb-3">
                                 <label class="form-label">PASSWORD*</label>
-                                <input type="password" class="form-control" name="password" value="{{$user->password}}">  
+                                <input type="password" class="form-control" name="password" value="{{$user->password}}" required>  
                             </div>
                         </div>
 

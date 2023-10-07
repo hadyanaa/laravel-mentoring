@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('heading')
-Informasi
+Kelola Berita
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@ Informasi
             <!-- Card Header -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Informasi</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Berita</h6>
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form action="/info" method="POST">
+                <form action="/berita" method="POST">
                     @csrf
                     <div class="row">
                         {{-- Input Judul --}}
@@ -42,7 +42,7 @@ Informasi
                         <div class="col-12">
                             <div class="mb-3">
                               <label class="form-label">Detail Konten*</label>
-                              <textarea type="text" name="konten_info" class="form-control" rows="10" required></textarea>  
+                              <textarea type="text" name="konten_berita" class="form-control" rows="10" required></textarea>  
                             </div>
                         </div>
                     </div>

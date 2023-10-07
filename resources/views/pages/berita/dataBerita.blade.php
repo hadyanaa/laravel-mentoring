@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('heading')
-Informasi
+Kelola Berita
 @endsection
 
 @section('content')
@@ -12,14 +12,14 @@ Informasi
         <div class="card shadow mb-4">
             <!-- Card Header -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Kelola Informasi</h6>
-                <a href="/info/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                    <i class="bi bi-plus text-white-50"></i> TAMBAH
+                <h6 class="m-0 font-weight-bold text-primary">Daftar Informasi</h6>
+                <a href="/kelola-berita/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                    <i class="fas fa-plus"></i> TAMBAH
                 </a>
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                {{-- Table Info --}}
+                {{-- Table Berita --}}
                 <table class="table table-striped">
                     <thead>
                       <tr>
@@ -30,23 +30,23 @@ Informasi
                       </tr>
                     </thead>
                     <tbody>
-                        @forelse ($dataInfo as $key=>$value)
+                        @forelse ($dataBerita as $key=>$value)
                             <tr>
                             <th scope="row">{{$key+1}}</th>
                             <td>{{$value->judul}}</td>
                             <td>{{$value->sumber}}</td>
                             <td style="white-space:nowrap; width:1%">
-                                <a href="/info/{{$value->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                    <i class="bi bi-eye text-white"></i> 
+                                <a href="/kelola-berita/{{$value->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                    <i class="fas fa-eye" alt="view"></i> 
                                 </a>
-                                <a href="/info/{{$value->id}}/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                                    <i class="bi bi-pencil-square text-white"></i> 
+                                <a href="/kelola-berita/{{$value->id}}/edit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                                    <i class="fas fa-edit" alt="edit"></i> 
                                 </a>
-                                <form action="/info/{{$value->id}}" method="POST" class="d-none d-sm-inline-block">
+                                <form action="/kelola-berita/{{$value->id}}" method="POST" class="d-none d-sm-inline-block">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-sm btn-danger shadow-sm show_confirm">
-                                        <i class="bi bi-trash text-white"></i> 
+                                        <i class="fas fa-trash" alt="delete"></i> 
                                     </button>
                                 </form>
                             </td>                    

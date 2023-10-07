@@ -102,7 +102,7 @@ Kelola
                         {{-- Input Prodi Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">PRODI</label>
+                              <label class="form-label">PRODI*</label>
                               <select class="form-control form-select" name="prodi" required>
                                 <option value="">-- Pilih Prodi --</option>
                                 <option value="Sistem Informasi">Sistem Informasi</option>
@@ -111,6 +111,30 @@ Kelola
                               </select>
                             </div>
                             <!-- @error('prodi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{-- Input Angkatan Mentee --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">ANGKATAN*</label>
+                                <input type="text" class="form-control" name="angkatan" required>  
+                            </div>
+                            <!-- @error('akun_ig')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror -->
+                        </div>
+                        
+                        {{-- Input Akun IG Mentee --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">AKUN INSTAGRAM</label>
+                                <input type="text" class="form-control" name="akun_ig">  
+                            </div>
+                            <!-- @error('akun_ig')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror -->
                         </div>
@@ -135,30 +159,6 @@ Kelola
                                 <input type="text" class="form-control" name="alamat_domisili"> 
                             </div>
                             <!-- @error('alamat_domisili')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        {{-- Input Akun IG Mentee --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">AKUN INSTAGRAM</label>
-                                <input type="text" class="form-control" name="akun_ig">  
-                            </div>
-                            <!-- @error('akun_ig')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
-                        </div>
-
-                        {{-- Input Angkatan Mentee --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">ANGKATAN*</label>
-                                <input type="text" class="form-control" name="angkatan" required>  
-                            </div>
-                            <!-- @error('akun_ig')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror -->
                         </div>

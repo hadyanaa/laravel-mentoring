@@ -11,7 +11,13 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -24,7 +30,7 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="/presensi-kelompok">
-            <i class="bi bi-clipboard-data"></i>
+            <i class="fas fa-folder-open"></i>
             <span>Data Kelompok</span>
         </a>
     </li>
