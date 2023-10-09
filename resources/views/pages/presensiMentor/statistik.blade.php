@@ -27,6 +27,7 @@ Presensi
                       <th scope="col">HADIR</th>
                       <th scope="col">IZIN</th>
                       <th scope="col">SAKIT</th>
+                      <th scope="col">ALPA</th>
                       <th scope="col">% KEAKTIFAN</th>
                     </tr>
                   </thead>
@@ -39,6 +40,7 @@ Presensi
                       <td>{{$hadir[$key]}}</td>
                       <td>{{$izin[$key]}}</td>
                       <td>{{$sakit[$key]}}</td>
+                      <td>{{$alpa[$key]}}</td>
                       <td>{{$keaktifan[$key]}}%</td>
                                           
                     </tr>

@@ -77,6 +77,7 @@ Presensi
                           <option value="Hadir" {{$status[$key]->status === "Hadir" ? "selected": ""}}>Hadir</option>
                           <option value="Izin" {{$status[$key]->status === "Izin" ? "selected": ""}}>Izin</option>
                           <option value="Sakit" {{$status[$key]->status === "Sakit" ? "selected": ""}}>Sakit</option>
+                          <option value="Alpa" {{$status[$key]->status === "Alpa" ? "selected": ""}}>Alpa</option>
                         </select>
                       </td>
                     </tr>

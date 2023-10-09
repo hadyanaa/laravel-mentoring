@@ -53,13 +53,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/presensi-kelompok/{id}/edit', [PresensiMentorController::class, 'edit']);
 
-    //CRU Berita    
-    // Route::get('/kelola-berita/{id}/create', [BeritaController::class, 'create']);
-
-    // Route::get('/kelola-berita/{id}/lihat', [BeritaController::class, 'show']);
-
-    // Route::get('/kelola-berita/{id}/edit', [BeritaController::class, 'edit']);
-
     // Read and update Profile
     Route::get('/profile', [LandingController::class, 'profile']);
 
@@ -70,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [LandingController::class, 'dashboard']); 
 });
 
-// Route Frontend (sementara)
+// Route Frontend (ditambah Berita)
 Route::get('/', function () {
     return view('home',[
         "dataBerita" => Berita::all()

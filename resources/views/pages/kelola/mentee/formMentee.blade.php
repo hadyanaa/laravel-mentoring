@@ -35,9 +35,6 @@ Kelola
                               <label class="form-label">NAMA MENTEE*</label>
                               <input type="text" name="nama_lengkap" class="form-control" required>  
                             </div>
-                            <!-- @error('nama_lengkap')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
 
                         {{-- Input Jenis Kelamin Mentee --}}
@@ -50,9 +47,6 @@ Kelola
                                 <option value="Perempuan">Perempuan</option>
                               </select>
                             </div>
-                            <!-- @error('jenis_kelamin')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                     </div>
 
@@ -63,9 +57,6 @@ Kelola
                               <label class="form-label">TEMPAT LAHIR (KOTA)</label>
                               <input type="text" name="tempat_lahir" class="form-control">  
                             </div>
-                            <!-- @error('tempat_lahir')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
 
                         {{-- Input Tanggal Lahir Mentee --}}
@@ -81,9 +72,6 @@ Kelola
                                     </div>
                                 </div>
                             </div>
-                            <!-- @error('tgl_lahir')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                     </div>
 
@@ -94,9 +82,6 @@ Kelola
                               <label class="form-label">NOMOR HP*</label>
                               <input type="text" class="form-control" name="no_hp" required>  
                             </div>
-                            <!-- @error('no_hp')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
 
                         {{-- Input Prodi Mentee --}}
@@ -110,9 +95,6 @@ Kelola
                                 <option value="Bisnis Digital">Bisnis Digital</option>
                               </select>
                             </div>
-                            <!-- @error('prodi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                     </div>
 
@@ -123,9 +105,6 @@ Kelola
                                 <label class="form-label">ANGKATAN*</label>
                                 <input type="text" class="form-control" name="angkatan" required>  
                             </div>
-                            <!-- @error('akun_ig')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                         
                         {{-- Input Akun IG Mentee --}}
@@ -134,9 +113,6 @@ Kelola
                                 <label class="form-label">AKUN INSTAGRAM</label>
                                 <input type="text" class="form-control" name="akun_ig">  
                             </div>
-                            <!-- @error('akun_ig')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                     </div>
 
@@ -147,9 +123,6 @@ Kelola
                                 <label class="form-label">ALAMAT ASAL</label>
                                 <input type="text" class="form-control" name="alamat_asal">  
                             </div>
-                            <!-- @error('alamat_asal')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
 
                         {{-- Input Domisili Mentee --}}
@@ -158,9 +131,6 @@ Kelola
                                 <label class="form-label">ALAMAT DOMISILI</label>
                                 <input type="text" class="form-control" name="alamat_domisili"> 
                             </div>
-                            <!-- @error('alamat_domisili')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                     </div>
 
@@ -178,9 +148,6 @@ Kelola
                                     @endforelse
                                 </select>
                             </div>
-                            <!-- @error('kelompok_id')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror -->
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

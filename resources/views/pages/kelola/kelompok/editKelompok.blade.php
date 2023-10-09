@@ -24,19 +24,16 @@ Kelola
                         {{-- Input Nama Kelompok --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">NAMA KELOMPOK</label>
-                              <input type="text" name="nama_kelompok" class="form-control" value="{{$kelompok->nama_kelompok}}">  
+                              <label class="form-label">NAMA KELOMPOK*</label>
+                              <input type="text" name="nama_kelompok" class="form-control" value="{{$kelompok->nama_kelompok}}" required>  
                             </div>
-                            @error('nama_kelompok')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">NAMA MENTOR</label>
-                              <select class="form-control form-select" name="mentor_id">
+                              <label class="form-label">NAMA MENTOR*</label>
+                              <select class="form-control form-select" name="mentor_id" required>
                                 <option value="">-- Pilih Mentor --</option>
                                 @forelse ($mentor as $item)
                                     @if ($item->id === $kelompok->mentor_id)
@@ -49,9 +46,6 @@ Kelola
                                 @endforelse
                               </select>
                             </div>
-                            @error('mentor_id')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
 

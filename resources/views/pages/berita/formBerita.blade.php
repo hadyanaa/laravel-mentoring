@@ -17,7 +17,7 @@ Kelola Berita
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form action="/berita" method="POST">
+                <form action="/kelola-berita" method="POST">
                     @csrf
                     <div class="row">
                         {{-- Input Judul --}}

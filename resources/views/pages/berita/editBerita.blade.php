@@ -17,7 +17,7 @@ Kelola Berita
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <form action="/berita/{{$berita->id}}" method="POST">
+                <form action="/kelola-berita/{{$berita->id}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="row">

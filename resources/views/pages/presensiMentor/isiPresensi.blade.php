@@ -77,6 +77,7 @@ Presensi
                           <option value="Hadir">Hadir</option>
                           <option value="Izin">Izin</option>
                           <option value="Sakit">Sakit</option>
+                          <option value="Alpa">Alpa</option>
                         </select>
                       </td>
                     </tr>

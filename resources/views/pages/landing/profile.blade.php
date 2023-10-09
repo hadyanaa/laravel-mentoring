@@ -45,20 +45,20 @@ Kelola
                         <td>: {{$mentor->prodi}}</td>
                       </tr>
                       <tr>
+                        <th scope="row">Domisili</th>
+                        <td>: {{$mentor->domisili}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">No Telpon</th>
+                        <td>: {{$user->no_telpon}}</td>
+                      </tr>
+                      <tr>
                         <th scope="row">Email</th>
                         <td>: {{$user->email}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Password</th>
                         <td>: {{$user->password}}</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Aktivitas</th>
-                        <td>: Mahasiswa</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Domisili</th>
-                        <td>: {{$mentor->domisili}}</td>
                       </tr>
                     </tbody>
                 </table>

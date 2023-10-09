@@ -36,9 +36,6 @@ Kelola
                               <label class="form-label">NAMA MENTEE*</label>
                               <input type="text" name="nama_lengkap" class="form-control" value="{{$mentee->nama_lengkap}}" required>  
                             </div>
-                            @error('nama_lengkap')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Jenis Kelamin Mentee --}}
