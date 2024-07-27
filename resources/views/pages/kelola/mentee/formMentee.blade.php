@@ -32,27 +32,21 @@ Kelola
                         {{-- Input Nama Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">NAMA MENTEE</label>
-                              <input type="text" name="nama_lengkap" class="form-control">  
+                              <label class="form-label">NAMA MENTEE*</label>
+                              <input type="text" name="nama_lengkap" class="form-control" required>  
                             </div>
-                            @error('nama_lengkap')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Jenis Kelamin Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">JENIS KELAMIN</label>
-                              <select class="form-control form-select" name="jenis_kelamin">
+                              <label class="form-label">JENIS KELAMIN*</label>
+                              <select class="form-control form-select" name="jenis_kelamin" required>
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="Ikhwan">Ikhwan</option>
-                                <option value="Akhwat">Akhwat</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
                               </select>
                             </div>
-                            @error('jenis_kelamin')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
 
@@ -63,9 +57,6 @@ Kelola
                               <label class="form-label">TEMPAT LAHIR (KOTA)</label>
                               <input type="text" name="tempat_lahir" class="form-control">  
                             </div>
-                            @error('tempat_lahir')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Tanggal Lahir Mentee --}}
@@ -81,9 +72,6 @@ Kelola
                                     </div>
                                 </div>
                             </div>
-                            @error('tgl_lahir')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
 
@@ -91,28 +79,40 @@ Kelola
                         {{-- Input Nomor HP Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">NOMOR HP</label>
-                              <input type="text" class="form-control" name="no_hp">  
+                              <label class="form-label">NOMOR HP*</label>
+                              <input type="text" class="form-control" name="no_hp" required>  
                             </div>
-                            @error('no_hp')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Prodi Mentee --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">PRODI</label>
-                              <select class="form-control form-select" name="prodi">
+                              <label class="form-label">PRODI*</label>
+                              <select class="form-control form-select" name="prodi" required>
                                 <option value="">-- Pilih Prodi --</option>
                                 <option value="Sistem Informasi">Sistem Informasi</option>
                                 <option value="Teknik Informatika">Teknik Informatika</option>
                                 <option value="Bisnis Digital">Bisnis Digital</option>
                               </select>
                             </div>
-                            @error('prodi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{-- Input Angkatan Mentee --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">ANGKATAN*</label>
+                                <input type="text" class="form-control" name="angkatan" required>  
+                            </div>
+                        </div>
+                        
+                        {{-- Input Akun IG Mentee --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">AKUN INSTAGRAM</label>
+                                <input type="text" class="form-control" name="akun_ig">  
+                            </div>
                         </div>
                     </div>
 
@@ -123,9 +123,6 @@ Kelola
                                 <label class="form-label">ALAMAT ASAL</label>
                                 <input type="text" class="form-control" name="alamat_asal">  
                             </div>
-                            @error('alamat_asal')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Domisili Mentee --}}
@@ -134,28 +131,14 @@ Kelola
                                 <label class="form-label">ALAMAT DOMISILI</label>
                                 <input type="text" class="form-control" name="alamat_domisili"> 
                             </div>
-                            @error('alamat_domisili')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
 
                     <div class="row">
-                        {{-- Input Akun IG Mentee --}}
-                        <div class="col-6">
+                        {{-- Input Kelompok Mentoring --}}
+                        <div class="col-12">
                             <div class="mb-3">
-                                <label class="form-label">AKUN INSTAGRAM</label>
-                                <input type="text" class="form-control" name="akun_ig">  
-                            </div>
-                            @error('akun_ig')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        {{-- Input Domisili Mentee --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">KELOMPOK MENTORING</label>
+                                <label class="form-label">KELOMPOK MENTORING*</label>
                                 <select class="form-control form-select" name="kelompok_id">
                                     <option value="">-- Pilih Kelompok --</option>
                                     @forelse ($kelompok as $item)
@@ -165,9 +148,6 @@ Kelola
                                     @endforelse
                                 </select>
                             </div>
-                            @error('kelompok_id')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

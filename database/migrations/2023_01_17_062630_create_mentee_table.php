@@ -16,14 +16,15 @@ return new class extends Migration
         Schema::create('mentee', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lengkap');
-            $table->string('tempat_lahir');
-            $table->date('tgl_lahir');
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tgl_lahir')->nullable();
             $table->string('jenis_kelamin');
-            $table->string('alamat_asal');
-            $table->string('alamat_domisili');
+            $table->string('alamat_asal')->nullable();
+            $table->string('alamat_domisili')->nullable();
             $table->string('prodi');
-            $table->bigInteger('no_hp')->length(12)->unsigned();
-            $table->string('akun_ig');
+            $table->string('angkatan');
+            $table->string('no_hp');
+            $table->string('akun_ig')->nullable();
             $table->unsignedBigInteger('kelompok_id')->nullable();
             $table->foreign('kelompok_id')->references('id')->on('kelompok')->onDelete('set null');
             $table->timestamps();

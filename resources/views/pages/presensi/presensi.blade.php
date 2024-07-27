@@ -25,6 +25,7 @@ Presensi
                         <th scope="col">MENTOR</th>
                         <th scope="col">KELOMPOK</th>
                         <th scope="col">MATERI</th>
+                        <th scope="col">TANGGAL</th>
                         <th scope="col">AKSI</th>
                       </tr>
                     </thead>
@@ -35,6 +36,7 @@ Presensi
                         <td>{{$item->kelompok->mentor->nama_mentor}}</td>
                         <td>{{$item->kelompok->nama_kelompok}}</td>
                         <td>{{$item->materi}}</td>
+                        <td>{{$item->tanggal}}</td>
                         <td>
                             <a href="/presensi/{{$item->id}}">
                                 <button type="button" class="btn btn-primary btn-sm">LIHAT</button>
@@ -44,6 +46,7 @@ Presensi
                       @empty
                       <tr>
                         <th scope="row">-</th>
+                        <td>Tidak ada data</td>
                         <td>Tidak ada data</td>
                         <td>Tidak ada data</td>
                         <td>Tidak ada data</td>

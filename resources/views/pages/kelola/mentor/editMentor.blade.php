@@ -24,27 +24,21 @@ Kelola
                         {{-- Input Nama Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">NAMA MENTOR</label>
-                              <input type="text" name="nama_mentor" class="form-control" value="{{$mentor->nama_mentor}}">  
+                              <label class="form-label">NAMA MENTOR*</label>
+                              <input type="text" name="nama_mentor" class="form-control" value="{{$mentor->nama_mentor}}" required>  
                             </div>
-                            @error('nama_mentor')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Jenis Kelamin Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                              <label class="form-label">JENIS KELAMIN</label>
-                              <select class="form-control form-select" name="jenis_kelamin">
+                              <label class="form-label">JENIS KELAMIN*</label>
+                              <select class="form-control form-select" name="jenis_kelamin" required>
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="Ikhwan" {{$mentor->jenis_kelamin === "Ikhwan" ? "selected": ""}}>Ikhwan</option>
-                                <option value="Akhwat" {{$mentor->jenis_kelamin === "Akhwat" ? "selected": ""}}>Akhwat</option>
+                                <option value="Laki-laki" {{$mentor->jenis_kelamin === "Laki-laki" ? "selected": ""}}>Laki-laki</option>
+                                <option value="Perempuan" {{$mentor->jenis_kelamin === "Perempuan" ? "selected": ""}}>Perempuan</option>
                               </select>
                             </div>
-                            @error('jenis_kelamin')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                     </div>
 
@@ -55,9 +49,6 @@ Kelola
                               <label class="form-label">ASAL INSTITUSI</label>
                               <input type="text" class="form-control" name="asal_institusi" value="{{$mentor->asal_institusi}}">  
                             </div>
-                            @error('asal_institusi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
                         {{-- Input Prodi Mentor --}}
@@ -71,9 +62,24 @@ Kelola
                                 <option value="Bisnis Digital" {{$mentor->prodi === "Bisnis Digital" ? "selected": ""}}>Bisnis Digital</option>
                               </select>
                             </div>
-                            @error('prodi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{-- Input Domisili Mentor --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">DOMISILI</label>
+                                <input type="text" class="form-control" name="domisili" value="{{$mentor->domisili}}"> 
+                            </div>
+                        </div>
+                        
+                        {{-- Input No Telpon Mentor --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">NO TELPON*</label>
+                                <input type="text" class="form-control" name="no_telpon" value="{{$mentor->no_telpon}}" required> 
+                            </div>
                         </div>
                     </div>
 
@@ -81,46 +87,19 @@ Kelola
                         {{-- Input Email Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label class="form-label">EMAIL</label>
-                                <input type="email" class="form-control" name="email" value="{{$user->email}}">  
-                            </div>
-                            @error('email')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        {{-- Input Aktivitas Mentor --}}
-                        {{-- Disabled untuk sementara --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">AKTIVITAS</label>
-                                <input type="text" class="form-control" readonly> 
+                                <label class="form-label">EMAIL*</label>
+                                <input type="email" class="form-control" name="email" value="{{$user->email}}" required>  
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         {{-- Input Password Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
-                                <label class="form-label">PASSWORD</label>
-                                <input type="password" class="form-control" name="password" value="{{$user->password}}">  
+                                <label class="form-label">PASSWORD*</label>
+                                <input type="password" class="form-control" name="password" value="{{$user->password}}" required>  
                             </div>
-                            @error('password')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
 
-                        {{-- Input Domisili Mentor --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">DOMISILI</label>
-                                <input type="text" class="form-control" name="domisili" value="{{$mentor->domisili}}"> 
-                            </div>
-                            @error('domisili')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

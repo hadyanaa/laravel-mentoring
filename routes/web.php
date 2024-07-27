@@ -7,7 +7,9 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\PresensiMentorController;
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Berita;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //CRUD Mentee
     Route::resource('mentee', MenteeController::class);
+
+    //CRUD Info
+    Route::resource('kelola-berita', BeritaController::class);
+    
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -57,11 +63,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [LandingController::class, 'dashboard']); 
 });
 
-// Route Frontend (sementara)
+// Route Frontend (ditambah Berita)
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+        "dataBerita" => Berita::all()
+    ]);
 });
-
 
 Auth::routes();
 
