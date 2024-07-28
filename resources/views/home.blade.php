@@ -26,9 +26,15 @@ Informasi
                             <br><br>
                             Disclaimer: Hanya untuk kalangan Mentor. Dilarang menyebarluaskan materi tanpa seizin pihak BKPK.
                             </p>
-                            <a href="https://drive.google.com/drive/folders/1GUGxQqsvkKoqutXSqb79kcQtJOIzTTj3?usp=sharing" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                Link Materi
-                            </a>
+                            @auth
+                                <a target="_blank" href="https://drive.google.com/drive/folders/1GUGxQqsvkKoqutXSqb79kcQtJOIzTTj3?usp=sharing" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                    Link Materi
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                    Login
+                                </a>
+                            @endauth
                         </div>    
                     </div>
                     <div class="col"></div>
