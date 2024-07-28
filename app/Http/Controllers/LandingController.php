@@ -22,7 +22,7 @@ class LandingController extends Controller
         $presensi = Presensi::all();
         $mentorall = Mentor::all();
         $mentor = Mentor::find($id);
-        $user = User::find($mentor->user_id);
+        $user = $mentor ? User::find($mentor->user_id) : null;
 
         // Dashboard Milik mentor
         $totalkelompok = Kelompok::where('mentor_id', $id)->get();
