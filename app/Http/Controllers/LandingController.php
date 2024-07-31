@@ -52,8 +52,12 @@ class LandingController extends Controller
     {
         $id = Auth::user()->id;
         $mentor = Mentor::find($id);
-        $user = User::find($mentor->user_id);
-        return view('pages.landing.profile', ['mentor'=> $mentor, 'user'=> $user]);
+        if ($mentor) {
+            $user = User::find($mentor->user_id);
+            return view('pages.landing.profile', ['mentor'=> $mentor, 'user'=> $user]);
+        } else {
+            return redirect('/');
+        }
     }
 
     public function edit()

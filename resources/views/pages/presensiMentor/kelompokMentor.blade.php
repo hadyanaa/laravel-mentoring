@@ -32,5 +32,10 @@ Presensi
         </div>
     </div>
     @endforeach
+    @if (count($kelompok) == 0)
+    <div class="card-body">
+      <h5>Belum ada kelompok</h5>
+    </div>
+    @endif
 </div>    
 @endsection
