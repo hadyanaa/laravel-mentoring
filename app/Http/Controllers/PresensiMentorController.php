@@ -9,6 +9,7 @@ use App\Models\Mentee;
 use App\Models\Presensi;
 use App\Models\Kelompok;
 use App\Models\Status;
+use App\Models\User;
 
 class PresensiMentorController extends Controller
 {
@@ -17,7 +18,9 @@ class PresensiMentorController extends Controller
         $userId = Auth::user()->id;
         $mentorId = Mentor::where('user_id', $userId)->first();
         $kelompok = Kelompok::where('mentor_id', $mentorId->id)->get();
-        return view('pages.presensiMentor.kelompokMentor', ['kelompok'=> $kelompok]);
+        $mentor = Mentor::find($mentorId->id);
+        $user = User::find($mentor->user_id);
+        return view('pages.presensiMentor.kelompokMentor', ['kelompok'=> $kelompok, 'mentor' => $mentor, 'user' => $user]);
     }
 
     /**

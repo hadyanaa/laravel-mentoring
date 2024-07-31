@@ -50,7 +50,7 @@ Kelola
                       </tr>
                       <tr>
                         <th scope="row">No Telpon</th>
-                        <td>: {{$user->no_telpon}}</td>
+                        <td>: {{$mentor->no_telpon}}</td>
                       </tr>
                       <tr>
                         <th scope="row">Email</th>
@@ -58,7 +58,11 @@ Kelola
                       </tr>
                       <tr>
                         <th scope="row">Password</th>
-                        <td>: {{$user->password}}</td>
+                        <td>
+                          <button type="button" class="btn btn-primary btn-sm">
+                            Ganti Password
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
                 </table>

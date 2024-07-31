@@ -16,10 +16,10 @@ Kelola
                 <h6 class="m-0 font-weight-bold text-primary">Edit Profile</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
-                <form action="/profile/{{Auth::user()->id}}" method="POST">
-                    @csrf
-                    @method('PUT')
+            <form action="/profile/{{Auth::user()->id}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="card-body">
                     <div class="row">
                         {{-- Input Nama Mentor --}}
                         <div class="col-6">
@@ -88,29 +88,7 @@ Kelola
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        {{-- Input Aktivitas Mentor --}}
-                        {{-- Disabled untuk sementara --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">AKTIVITAS</label>
-                                <input type="text" class="form-control" readonly> 
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        {{-- Input Password Mentor --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">PASSWORD</label>
-                                <input type="text" class="form-control" name="password" value="{{$user->password}}" disabled>  
-                            </div>
-                            {{-- @error('password')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror --}}
-                        </div>
-
+                        
                         {{-- Input Domisili Mentor --}}
                         <div class="col-6">
                             <div class="mb-3">
@@ -122,9 +100,34 @@ Kelola
                             @enderror
                         </div>
                     </div>
+
+                    <div class="row">
+                        <!-- {{-- Input Password Mentor --}}
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">PASSWORD</label>
+                                <input type="text" class="form-control" name="password" value="{{$user->password}}" disabled>  
+                            </div>
+                            {{-- @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror --}}
+                        </div> -->
+                        
+                        {{-- Input Aktivitas Mentor --}}
+                        {{-- Disabled untuk sementara --}}
+                        <!-- <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">AKTIVITAS</label>
+                                <input type="text" class="form-control" readonly> 
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+                    <a href="/profile" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>    

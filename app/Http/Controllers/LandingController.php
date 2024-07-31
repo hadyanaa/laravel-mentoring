@@ -51,7 +51,7 @@ class LandingController extends Controller
     public function profile()
     {
         $id = Auth::user()->id;
-        $mentor = Mentor::find($id);
+        $mentor = Mentor::where('user_id', $id)->first();
         if ($mentor) {
             $user = User::find($mentor->user_id);
             return view('pages.landing.profile', ['mentor'=> $mentor, 'user'=> $user]);
@@ -63,14 +63,14 @@ class LandingController extends Controller
     public function edit()
     {
         $id = Auth::user()->id;
-        $mentor = Mentor::find($id);
+        $mentor = Mentor::where('user_id', $id)->first();
         $user = User::find($mentor->user_id);
         return view('pages.landing.editProfile', ['mentor'=> $mentor, 'user'=> $user]);
     }
 
     public function update(Request $request, $id)
     {
-        $mentor = Mentor::find($id);
+        $mentor = Mentor::where('user_id', $id)->first();
         $user = User::find($mentor->user_id);
      
         $request->validate([
