@@ -8,6 +8,7 @@ use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\PresensiMentorController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Berita;
 
@@ -24,18 +25,14 @@ use App\Models\Berita;
 
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    //CRUD Mentor
-    Route::resource('mentor', MentorController::class);
-
-    //CRUD Kelompok
-    Route::resource('kelompok', KelompokController::class);
-
-    //CRUD Mentee
-    Route::resource('mentee', MenteeController::class);
-
-    //CRUD Info
-    Route::resource('kelola-berita', BeritaController::class);
-    
+    //CRUD Admin
+    Route::resources([
+        'mentor' => MentorController::class,
+        'kelompok' => KelompokController::class,
+        'mentee' => MenteeController::class,
+        'kelola-berita' => BeritaController::class,
+        'admin' => UserController::class,
+    ]);
 });
 
 Route::middleware(['auth'])->group(function () {

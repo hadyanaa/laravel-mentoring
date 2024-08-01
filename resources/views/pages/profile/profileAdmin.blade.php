@@ -53,7 +53,7 @@ Profile Admin
             <div
                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                <h6 class="m-0 font-weight-bold text-primary">Data Admin</h6>
-               <a href="/mentor/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+               <a href="/admin/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                   <i class="fas fa-plus"></i> Tambah
                </a>
             </div>
