@@ -18,15 +18,15 @@ class LandingController extends Controller
 {
     public function dashboard()
     {
-        $id = Auth::user()->id;
+        $user = Auth::user();
+        $id = $user->id;
         $kelompok = Kelompok::all();
         $mentee = Mentee::all();
         $presensi = Presensi::all();
         $mentorall = Mentor::all();
         $mentor = Mentor::where('user_id', $id)->first();
-        $user = $mentor ? User::find($mentor->user_id) : null;
         // Dashboard Milik mentor
-        if($user != null){
+        if($user->role == 'mentor'){
             $totalkelompok = Kelompok::where('mentor_id', $mentor->id)->get();
             $totalmentee = 0;
             $totalpresensi = 0;
@@ -51,6 +51,7 @@ class LandingController extends Controller
         } 
         // dashboard admin
         else {
+            $admin = User::where('role', 'admin')->get();
             return view('pages.dashboard.dashboard', [
                 'mentor'=> $mentor, 
                 'mentorall'=> $mentorall, 
@@ -58,6 +59,7 @@ class LandingController extends Controller
                 'kelompok'=> $kelompok,
                 'mentee'=> $mentee,
                 'presensi'=> $presensi,
+                'admin'=> $admin,
             ]);
         }
     }
@@ -72,8 +74,7 @@ class LandingController extends Controller
         } else {
             // dashboard admin
             $user = User::find($id);
-            $admin = User::where('role', 'admin')->get();
-            return view('pages.profile.profileAdmin', ['user'=> $user, 'admin'=> $admin]);
+            return view('pages.profile.profileAdmin', ['user'=> $user]);
         }
     }
 
