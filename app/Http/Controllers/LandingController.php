@@ -79,38 +79,49 @@ class LandingController extends Controller
 
     public function edit()
     {
-        $id = Auth::user()->id;
-        $mentor = Mentor::where('user_id', $id)->first();
-        $user = User::find($mentor->user_id);
-        return view('pages.profile.editProfile', ['mentor'=> $mentor, 'user'=> $user]);
+        $user = Auth::user();
+        if (Auth::user()->role == 'mentor') {
+            $mentor = Mentor::where('user_id', $user->id)->first();
+            return view('pages.profile.editProfile', ['mentor'=> $mentor, 'user'=> $user]);
+        } else {
+            return view('pages.profile.editProfileAdmin', ['user'=> $user]);
+        }
     }
 
     public function update(Request $request, $id)
     {
         $mentor = Mentor::where('user_id', $id)->first();
-        $user = User::find($mentor->user_id);
-     
-        $request->validate([
-            'nama_mentor' => 'required', 
-            'jenis_kelamin' => 'required',
-            'asal_institusi' => 'required',
-            'prodi' => 'required',
-            'domisili' => 'required',
-            'no_telpon' => 'required',
-            'email' => ['required', Rule::unique('users')->ignore($user->id)]
-        ]); 
+        $user = Auth::user();
 
-        $user->name = $request->nama_mentor;
+        if ($user->role == 'mentor'){
+            $request->validate([
+                'nama_mentor' => 'required', 
+                'jenis_kelamin' => 'required',
+                'asal_institusi' => 'required',
+                'prodi' => 'required',
+                'domisili' => 'required',
+                'no_telpon' => 'required',
+                'email' => ['required', Rule::unique('users')->ignore($user->id)]
+            ]); 
+
+            $mentor->nama_mentor = $request->nama_mentor;
+            $mentor->jenis_kelamin = $request->jenis_kelamin;
+            $mentor->asal_institusi = $request->asal_institusi;
+            $mentor->prodi = $request->prodi;
+            $mentor->domisili = $request->domisili;
+            $mentor->no_telpon = $request->no_telpon;
+            $mentor->update();
+        } else {
+            $request->validate([
+                'name' => 'required', 
+                'email' => ['required', Rule::unique('users')->ignore($user->id)]
+            ]); 
+        }
+
+        $user->name = $user->role == 'mentor' ? $request->nama_mentor : $request->name;
         $user->email = $request->email;
         $user->update();
-
-        $mentor->nama_mentor = $request->nama_mentor;
-        $mentor->jenis_kelamin = $request->jenis_kelamin;
-        $mentor->asal_institusi = $request->asal_institusi;
-        $mentor->prodi = $request->prodi;
-        $mentor->domisili = $request->domisili;
-        $mentor->no_telpon = $request->no_telpon;
-        $mentor->update();
+     
 
         SweetAlert::success('Berhasil mengubah profile', 'Ubah profile');
         return redirect()->action([LandingController::class, 'profile'],['id'=>$user->id]);

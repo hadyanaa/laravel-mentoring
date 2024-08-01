@@ -31,18 +31,20 @@ Profile Admin
                   </thead>
                   <tbody>
                      <tr>
-                     <th scope="row">Email</th>
-                     <td>: {{$user->email}}</td>
-                     <th scope="row">Jumlah Admin</th>
-                     <td>: 1</td>
+                        <th scope="row">Nama</th>
+                        <td>: {{$user->name}}</td>
+                        <th scope="row">Email</th>
+                        <td>: {{$user->email}}</td>
                      </tr>
                      <tr>
-                     <th scope="row">Password</th>
-                     <td>
-                        <a href="/profile/change-password" class="btn btn-primary btn-sm">
-                           Ganti Password
-                        </a>
-                     </td>
+                        <th scope="row">Password</th>
+                        <td>
+                           <a href="/profile/change-password" class="btn btn-primary btn-sm">
+                              Ganti Password
+                           </a>
+                        </td>
+                        <th scope="row">Jumlah Admin</th>
+                        <td>: 1</td>
                      </tr>
                   </tbody>
                </table>
