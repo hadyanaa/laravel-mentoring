@@ -55,6 +55,7 @@ class MentorController extends Controller
         $user = new User;
         $user->name = $request->nama_mentor;
         $user->email = $request->email;
+        $user->role = 'mentor';
         $user->password = Hash::make($request->password);
         $user->save();
 
