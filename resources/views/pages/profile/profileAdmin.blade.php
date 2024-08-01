@@ -69,10 +69,11 @@ Profile Admin
                      </tr>
                   </thead>
                   <tbody>
+                     @forelse ($admin as $key=>$item)
                      <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td>{{$key + 1}}</td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->email}}</td>
                         <td>
                            <a href="/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                               <i class="fas fa-eye"></i> 
@@ -89,6 +90,14 @@ Profile Admin
                            </form>
                         </td>
                      </tr>
+                     @empty
+                     <tr>
+                        <td>No data</td>
+                        <td>No data</td>
+                        <td>No data</td>
+                        <td>No data</td>
+                     </tr>
+                     @endforelse
                   </tbody>
                </table>
             </div>

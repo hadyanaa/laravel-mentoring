@@ -72,8 +72,8 @@ class LandingController extends Controller
         } else {
             // dashboard admin
             $user = User::find($id);
-            // $data_admin = User::where('role', 'admin');
-            return view('pages.profile.profileAdmin', ['user'=> $user]);
+            $admin = User::where('role', 'admin')->get();
+            return view('pages.profile.profileAdmin', ['user'=> $user, 'admin'=> $admin]);
         }
     }
 
