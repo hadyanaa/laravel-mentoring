@@ -5,11 +5,9 @@ Dashboard
 @endsection
 
 @section('content')
-    @if (Auth::user()->email === "admin@bkpk.com")
-        <!-- Sidebar -->
+    @if (Auth::user()->role == "admin")
         @include('pages.dashboard.dashboardAdmin')
     @else
         @include('pages.dashboard.dashboardMentor')
-        <!-- End of Sidebar -->
     @endif   
 @endsection

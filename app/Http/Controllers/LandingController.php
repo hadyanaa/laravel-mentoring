@@ -11,6 +11,7 @@ use App\Models\Mentee;
 use App\Models\User;
 use App\Models\Presensi;
 use App\Models\Kelompok;
+use App\Models\Berita;
 use Tdanandeh\SweetAlert\SweetAlert;
 
 
@@ -20,13 +21,9 @@ class LandingController extends Controller
     {
         $user = Auth::user();
         $id = $user->id;
-        $kelompok = Kelompok::all();
-        $mentee = Mentee::all();
-        $presensi = Presensi::all();
-        $mentorall = Mentor::all();
-        $mentor = Mentor::where('user_id', $id)->first();
         // Dashboard Milik mentor
         if($user->role == 'mentor'){
+            $mentor = Mentor::where('user_id', $id)->first();
             $totalkelompok = Kelompok::where('mentor_id', $mentor->id)->get();
             $totalmentee = 0;
             $totalpresensi = 0;
@@ -38,12 +35,8 @@ class LandingController extends Controller
             }
     
             return view('pages.dashboard.dashboard', [
-                'mentor'=> $mentor, 
-                'mentorall'=> $mentorall, 
-                'user'=> $user, 
-                'kelompok'=> $kelompok,
-                'mentee'=> $mentee,
-                'presensi'=> $presensi,
+                'mentor'=> $mentor,
+                'user'=> $user,
                 'totalkelompok' => $totalkelompok,
                 'totalmentee' => $totalmentee,
                 'totalpresensi' => $totalpresensi
@@ -51,14 +44,19 @@ class LandingController extends Controller
         } 
         // dashboard admin
         else {
+            $mentor = Mentor::all();
+            $mentee = Mentee::all();
+            $kelompok = Kelompok::all();
+            $presensi = Presensi::all();
+            $berita = Berita::all();
             $admin = User::where('role', 'admin')->get();
             return view('pages.dashboard.dashboard', [
-                'mentor'=> $mentor, 
-                'mentorall'=> $mentorall, 
+                'mentor'=> $mentor,
                 'user'=> $user, 
                 'kelompok'=> $kelompok,
                 'mentee'=> $mentee,
                 'presensi'=> $presensi,
+                'berita'=> $berita,
                 'admin'=> $admin,
             ]);
         }

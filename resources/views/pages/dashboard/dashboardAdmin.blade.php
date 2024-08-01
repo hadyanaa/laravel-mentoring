@@ -1,7 +1,6 @@
 <div class="row">
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Kelompok -->
+    <div class="col mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -23,9 +22,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Mentor -->
+    <div class="col mb-4">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -33,28 +31,27 @@
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Mentor (Total)</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            @if (count($mentorall) > 0)
-                                {{count($mentorall)}}
+                            @if (count($mentor) > 0)
+                                {{count($mentor)}}
                             @else
                                 0
                             @endif
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-user-secret fa-2x text-gray-300"></i>
+                        <i class="fas fa-chalkboard-teacher fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Mentee -->
+    <div class="col mb-4">
         <div class="card border-left-info shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                             Mentee (Total)</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                             @if (count($mentee) > 0)
@@ -71,9 +68,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Presensi -->
+    <div class="col mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -89,7 +85,30 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-list fa-2x text-gray-300"></i>
+                        <i class="fas fa-pen-square fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="col mb-4">
+        <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                            Berita (Total)</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            @if (count($berita) > 0)
+                                {{count($berita)}}
+                            @else
+                                0
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-newspaper fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -126,9 +145,6 @@
                 <td>
                     <a href="/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                         <i class="fas fa-eye"></i> 
-                    </a>
-                    <a href="/" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                        <i class="fas fa-edit"></i> 
                     </a>
                     <form action="/" method="POST" class="d-none d-sm-inline-block">
                         <!-- @csrf
