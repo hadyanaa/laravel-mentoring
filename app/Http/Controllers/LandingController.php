@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Mentor;
 use App\Models\Mentee;
 use App\Models\User;
 use App\Models\Presensi;
 use App\Models\Kelompok;
+use Tdanandeh\SweetAlert\SweetAlert;
 
 
 class LandingController extends Controller
@@ -108,6 +110,30 @@ class LandingController extends Controller
         $mentor->domisili = $request->domisili;
         $mentor->update();
 
+        SweetAlert::success('Berhasil mengubah profile', 'Ubah profile');
+        return redirect()->action([LandingController::class, 'profile'],['id'=>$user->id]);
+    }
+
+    public function editPassword()
+    {
+        return view('pages.profile.changePassword', ['user'=> Auth::user()]);
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        $user = Auth::user();
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect']);
+        }
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+        
+        SweetAlert::success('Berhasil mengubah password', 'Ubah password');
         return redirect()->action([LandingController::class, 'profile'],['id'=>$user->id]);
     }
 }

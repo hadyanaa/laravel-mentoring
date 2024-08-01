@@ -59,9 +59,9 @@ Profile Mentor
                   <tr>
                      <th scope="row">Password</th>
                      <td>
-                        <button type="button" class="btn btn-primary btn-sm">
+                        <a href="/profile/change-password" class="btn btn-primary btn-sm">
                            Ganti Password
-                        </button>
+                        </a>
                      </td>
                   </tr>
                </tbody>

@@ -38,8 +38,8 @@ Profile Mentor
                         <label class="form-label">JENIS KELAMIN</label>
                         <select class="form-control form-select" name="jenis_kelamin">
                            <option value="">-- Pilih Jenis Kelamin --</option>
-                           <option value="Ikhwan" {{$mentor->jenis_kelamin === "Laki-laki" ? "selected": ""}}>Laki-laki</option>
-                           <option value="Akhwat" {{$mentor->jenis_kelamin === "Perempuan" ? "selected": ""}}>Perempuan</option>
+                           <option value="Laki-laki" {{$mentor->jenis_kelamin === "Laki-laki" ? "selected": ""}}>Laki-laki</option>
+                           <option value="Perempuan" {{$mentor->jenis_kelamin === "Perempuan" ? "selected": ""}}>Perempuan</option>
                         </select>
                         </div>
                         @error('jenis_kelamin')

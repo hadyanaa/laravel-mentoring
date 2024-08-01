@@ -57,9 +57,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [LandingController::class, 'profile']);
 
     Route::get('/profile/edit', [LandingController::class, 'edit']);
-
+    
     Route::put('/profile/{id}', [LandingController::class, 'update']);
 
+    Route::get('/profile/change-password', [LandingController::class, 'editPassword']);
+    
+    Route::put('/profile/change-password/{id}', [LandingController::class, 'updatePassword']);
+    
     Route::get('/dashboard', [LandingController::class, 'dashboard']); 
 });
 
