@@ -125,12 +125,10 @@ class MentorController extends Controller
             'domisili' => 'required',
             'no_telpon' => 'required',
             'email' => ['required', Rule::unique('users')->ignore($user->id)],
-            'password' => 'required'
         ]); 
 
         $user->name = $request->nama_mentor;
         $user->email = $request->email;
-        $user->password = $request->password;
         $user->update();
 
         $mentor->nama_mentor = $request->nama_mentor;

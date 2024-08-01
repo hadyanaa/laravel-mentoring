@@ -16,9 +16,9 @@ Kelola
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Mentor</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
-                <form action="/mentor" method="POST">
-                    @csrf
+            <form action="/mentor" method="POST">
+                @csrf
+                <div class="card-body">
                     <div class="row">
                         {{-- Input Nama Mentor --}}
                         <div class="col-6">
@@ -34,8 +34,8 @@ Kelola
                               <label class="form-label">JENIS KELAMIN*</label>
                               <select class="form-control form-select" name="jenis_kelamin" required>
                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                <option value="Ikhwan">Laki-laki</option>
-                                <option value="Akhwat">Perempuan</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
                               </select>
                             </div>
                         </div>
@@ -46,7 +46,11 @@ Kelola
                         <div class="col-6">
                             <div class="mb-3">
                               <label class="form-label">ASAL INSTITUSI</label>
-                              <input type="text" class="form-control" name="asal_institusi">  
+                              <select class="form-control form-select" name="asal_institusi">
+                                <option value="">-- Pilih Institusi --</option>
+                                <option value="STTNF">STTNF</option>
+                                <option value="Lainnya">Lainnya</option>
+                              </select>
                             </div>
                         </div>
 
@@ -99,9 +103,12 @@ Kelola
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+                    <a href="/mentor" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>    

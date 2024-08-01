@@ -53,12 +53,11 @@ Kelola
                         <th scope="row">Email</th>
                         <td>: {{$user->email}}</td>
                       </tr>
-                      <tr>
-                        <th scope="row">Password</th>
-                        <td>: {{$user->password}}</td>
-                      </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="card-footer">
+              <a href="/mentor" class="btn btn-secondary">Back</a>
             </div>
         </div>
     </div>

@@ -16,10 +16,10 @@ Kelola
                 <h6 class="m-0 font-weight-bold text-primary">Edit Mentor</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
-                <form action="/mentor/{{$mentor->id}}" method="POST">
-                    @csrf
-                    @method('PUT')
+            <form action="/mentor/{{$mentor->id}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="card-body">
                     <div class="row">
                         {{-- Input Nama Mentor --}}
                         <div class="col-6">
@@ -92,18 +92,13 @@ Kelola
                             </div>
                         </div>
 
-                        {{-- Input Password Mentor --}}
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">PASSWORD*</label>
-                                <input type="password" class="form-control" name="password" value="{{$user->password}}" required>  
-                            </div>
-                        </div>
-
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button> 
+                    <a href="/mentor" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>    
