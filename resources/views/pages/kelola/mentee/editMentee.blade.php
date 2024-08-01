@@ -25,10 +25,10 @@ Kelola
                 <h6 class="m-0 font-weight-bold text-primary">Edit Mentee</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
-                <form action="/mentee/{{$mentee->id}}" method="POST">
-                    @csrf
-                    @method('PUT')
+            <form action="/mentee/{{$mentee->id}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="card-body">
                     <div class="row">
                         {{-- Input Nama Mentee --}}
                         <div class="col-6">
@@ -155,9 +155,12 @@ Kelola
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+                    <a href="/mentee" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>    
