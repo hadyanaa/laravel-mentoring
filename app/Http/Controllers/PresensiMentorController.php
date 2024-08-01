@@ -69,9 +69,8 @@ class PresensiMentorController extends Controller
         if ($mentorId->id == $kelompok->mentor_id){
             $mentee = Mentee::where('kelompok_id', $id)->get();
             $presensi = Presensi::where('kelompok_id', $id)->orderByDesc('id')->get();
-    
             // Code untuk mendapatkan statistik
-            if (count($presensi) > 0){
+            if (count($presensi) > 0 && count($mentee) > 0){
                 foreach ($mentee as $key=>$m){
                     $hadir[$key] = count(Status::where('mentee_id', $m->id)->where('status','Hadir')->get());
                     $sakit[$key] = count(Status::where('mentee_id', $m->id)->where('status','Sakit')->get());
