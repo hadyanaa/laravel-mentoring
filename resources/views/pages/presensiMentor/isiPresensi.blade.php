@@ -16,7 +16,7 @@ Presensi
               <h6 class="m-0 font-weight-bold text-primary">Isi Data Presensi Kegiatan</h6>
           </div>
           <!-- Card Body -->
-          <div class="card-body">
+          <div class="card-body table-responsive">
             <form action="/presensi" method="POST">
             @csrf
               

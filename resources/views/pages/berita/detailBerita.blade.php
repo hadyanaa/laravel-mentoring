@@ -15,7 +15,7 @@ Kelola Berita
                 <h6 class="m-0 font-weight-bold text-primary">Detail Berita</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class="table table-striped">
                     <tbody>
                       <tr>

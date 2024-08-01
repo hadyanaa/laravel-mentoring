@@ -19,7 +19,7 @@ Profile Admin
                 </a>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                <table class="table table-striped mt-4">
                   <thead>
                      <tr>
@@ -58,7 +58,7 @@ Profile Admin
                </a>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                <table class="table table-striped mt-4">
                   <thead>
                      <tr>

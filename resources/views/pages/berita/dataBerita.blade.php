@@ -18,7 +18,7 @@ Kelola Berita
                 </a>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 {{-- Table Berita --}}
                 <table class="table table-striped">
                     <thead>

@@ -16,7 +16,7 @@ Presensi
             <h6 class="m-0 font-weight-bold text-primary">Statistik Kehadiran {{ucfirst($kelompok->nama_kelompok)}}</h6>
          </div>
          <!-- Card Body -->
-         <div class="card-body">
+         <div class="card-body table-responsive">
             {{-- Table Presensi --}}
             <table class="table table-striped mt-4">
                <thead>

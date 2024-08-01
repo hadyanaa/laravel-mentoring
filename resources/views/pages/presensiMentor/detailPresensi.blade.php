@@ -16,7 +16,7 @@ Presensi
               <h6 class="m-0 font-weight-bold text-primary">Detail Data Presensi Kegiatan</h6>
           </div>
           <!-- Card Body -->
-          <div class="card-body">
+          <div class="card-body table-responsive">
               <div class="row my-2">
                   <div class="col-2">Kelompok</div>
                   <div class="col-4">{{$presensi->kelompok->nama_kelompok}} 

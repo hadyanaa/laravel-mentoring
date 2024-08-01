@@ -16,7 +16,7 @@ Kelola
                 <h6 class="m-0 font-weight-bold text-primary">Detail Data Mentor</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class="table table-striped">
                     <thead>
                       <tr>
