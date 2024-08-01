@@ -10,6 +10,7 @@ use App\Models\Presensi;
 use App\Models\Kelompok;
 use App\Models\Status;
 use App\Models\User;
+use App\Models\Berita;
 
 class PresensiMentorController extends Controller
 {
@@ -38,7 +39,9 @@ class PresensiMentorController extends Controller
             $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
             return view('pages.presensiMentor.isiPresensi', ['kelompok'=> $kelompok, 'mentee'=>$mentee]);
         } else {
-            return view('home');
+            return view('home', [
+                "dataBerita" => Berita::all()
+            ]);
         };
     }
 
@@ -57,7 +60,9 @@ class PresensiMentorController extends Controller
                 'mentee'=> $mentee
             ]);
         } else {
-            return view('home');
+            return view('home', [
+                "dataBerita" => Berita::all()
+            ]);
         }
     }
 
@@ -97,7 +102,9 @@ class PresensiMentorController extends Controller
                 ]);
             }
         } else {
-            return view('home');
+            return view('home', [
+                "dataBerita" => Berita::all()
+            ]);
         }
     }
 
@@ -112,7 +119,9 @@ class PresensiMentorController extends Controller
             $mentee = Mentee::where('kelompok_id', $kelompok->id)->get();
             return view('pages.presensiMentor.editPresensi', ['kelompok'=> $kelompok, 'presensi'=> $presensi, 'mentee'=> $mentee, 'status'=> $status]);
         } else {
-            return view('home');
+            return view('home', [
+                "dataBerita" => Berita::all()
+            ]);
         }
     }
 }

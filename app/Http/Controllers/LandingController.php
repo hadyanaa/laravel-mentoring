@@ -23,29 +23,41 @@ class LandingController extends Controller
         $mentorall = Mentor::all();
         $mentor = Mentor::where('user_id', $id)->first();
         $user = $mentor ? User::find($mentor->user_id) : null;
-
         // Dashboard Milik mentor
-        $totalkelompok = Kelompok::where('mentor_id', $mentor->id)->get();
-        $totalmentee = 0;
-        $totalpresensi = 0;
-        foreach ($totalkelompok as $tk){
-            $tmentee = count(Mentee::where('kelompok_id', $tk->id)->get());
-            $totalmentee += $tmentee;
-            $tpresensi = count(Presensi::where('kelompok_id', $tk->id)->get());
-            $totalpresensi += $tpresensi;
+        if($user != null){
+            $totalkelompok = Kelompok::where('mentor_id', $mentor->id)->get();
+            $totalmentee = 0;
+            $totalpresensi = 0;
+            foreach ($totalkelompok as $tk){
+                $tmentee = count(Mentee::where('kelompok_id', $tk->id)->get());
+                $totalmentee += $tmentee;
+                $tpresensi = count(Presensi::where('kelompok_id', $tk->id)->get());
+                $totalpresensi += $tpresensi;
+            }
+    
+            return view('pages.dashboard.dashboard', [
+                'mentor'=> $mentor, 
+                'mentorall'=> $mentorall, 
+                'user'=> $user, 
+                'kelompok'=> $kelompok,
+                'mentee'=> $mentee,
+                'presensi'=> $presensi,
+                'totalkelompok' => $totalkelompok,
+                'totalmentee' => $totalmentee,
+                'totalpresensi' => $totalpresensi
+            ]);
+        } 
+        // dashboard admin
+        else {
+            return view('pages.dashboard.dashboard', [
+                'mentor'=> $mentor, 
+                'mentorall'=> $mentorall, 
+                'user'=> $user, 
+                'kelompok'=> $kelompok,
+                'mentee'=> $mentee,
+                'presensi'=> $presensi,
+            ]);
         }
-
-        return view('pages.dashboard.dashboard', [
-            'mentor'=> $mentor, 
-            'mentorall'=> $mentorall, 
-            'user'=> $user, 
-            'kelompok'=> $kelompok,
-            'mentee'=> $mentee,
-            'presensi'=> $presensi,
-            'totalkelompok' => $totalkelompok,
-            'totalmentee' => $totalmentee,
-            'totalpresensi' => $totalpresensi
-        ]);
     }
 
     public function profile()
