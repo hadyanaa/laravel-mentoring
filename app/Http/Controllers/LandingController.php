@@ -96,6 +96,7 @@ class LandingController extends Controller
             'asal_institusi' => 'required',
             'prodi' => 'required',
             'domisili' => 'required',
+            'no_telpon' => 'required',
             'email' => ['required', Rule::unique('users')->ignore($user->id)]
         ]); 
 
@@ -108,6 +109,7 @@ class LandingController extends Controller
         $mentor->asal_institusi = $request->asal_institusi;
         $mentor->prodi = $request->prodi;
         $mentor->domisili = $request->domisili;
+        $mentor->no_telpon = $request->no_telpon;
         $mentor->update();
 
         SweetAlert::success('Berhasil mengubah profile', 'Ubah profile');

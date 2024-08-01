@@ -102,25 +102,12 @@ Profile Mentor
                </div>
 
                <div class="row">
-                  <!-- {{-- Input Password Mentor --}}
                   <div class="col-6">
                         <div class="mb-3">
-                           <label class="form-label">PASSWORD</label>
-                           <input type="text" class="form-control" name="password" value="{{$user->password}}" disabled>  
+                           <label class="form-label">NO TELPON</label>
+                           <input type="text" class="form-control" name="no_telpon" pattern="\d{10,}" value="{{$mentor->no_telpon}}" title="Masukkan nomor telpon dengan angka minimal 10 digit"> 
                         </div>
-                        {{-- @error('password')
-                           <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror --}}
-                  </div> -->
-                  
-                  {{-- Input Aktivitas Mentor --}}
-                  {{-- Disabled untuk sementara --}}
-                  <!-- <div class="col-6">
-                        <div class="mb-3">
-                           <label class="form-label">AKTIVITAS</label>
-                           <input type="text" class="form-control" readonly> 
-                        </div>
-                  </div> -->
+                  </div>
                </div>
             </div>
             <div class="card-footer">
