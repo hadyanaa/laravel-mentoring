@@ -65,6 +65,9 @@ Presensi
                     </tbody>
                   </table>
             </div>
+            <div class="card-footer">
+                <a href="/kelompok" class="btn btn-secondary">Back</a>
+            </div>
         </div>
     </div>
 </div>    

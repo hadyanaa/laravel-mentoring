@@ -16,10 +16,10 @@ Kelola
                 <h6 class="m-0 font-weight-bold text-primary">Edit Kelompok</h6>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
-                <form action="/kelompok/{{$kelompok->id}}" method="POST">
-                    @csrf
-                    @method('PUT')
+            <form action="/kelompok/{{$kelompok->id}}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="card-body">
                     <div class="row">
                         {{-- Input Nama Kelompok --}}
                         <div class="col-6">
@@ -49,9 +49,12 @@ Kelola
                         </div>
                     </div>
 
+                </div>
+                <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+                    <a href="/kelompok" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>    
