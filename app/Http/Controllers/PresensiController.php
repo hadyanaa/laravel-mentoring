@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Presensi;
 use App\Models\Status;
 use App\Models\Mentee;
+use App\Models\Berita;
 use DateTime;
 use Tdanandeh\SweetAlert\SweetAlert;
 
@@ -18,7 +19,9 @@ class PresensiController extends Controller
             $presensi = Presensi::all();
             return view('pages.presensi.presensi', compact('presensi'));
         } else {
-            return view('home');
+            return view('home', [
+                "dataBerita" => Berita::all()
+            ]);
         }
     }
 
@@ -76,7 +79,9 @@ class PresensiController extends Controller
             $mentee = Mentee::where('kelompok_id', $presensi->kelompok->id)->get();
             return view('pages.presensiMentor.detailPresensi', ['presensi'=> $presensi, 'mentee'=> $mentee]);
         } else {
-            return view('home');
+            return view('home', [
+                "dataBerita" => Berita::all()
+            ]);
         }
     }
 
