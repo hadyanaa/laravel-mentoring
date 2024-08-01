@@ -18,7 +18,7 @@ Kelola
                 </a>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 {{-- Table Mentor --}}
                 <table class="table table-striped">
                     <thead>
@@ -37,7 +37,7 @@ Kelola
                             <td>{{$item->nama_mentor}}</td>
                             <td>{{$item->jenis_kelamin}}</td>
                             <td>{{$item->prodi}}</td>
-                            <td>
+                            <td class="">
                                 <a href="/mentor/{{$item->id}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="fas fa-eye"></i> 
                                 </a>

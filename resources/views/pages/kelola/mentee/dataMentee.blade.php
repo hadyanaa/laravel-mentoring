@@ -18,7 +18,7 @@ Kelola
                 </a>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 {{-- Table Mentee --}}
                 <table class="table table-striped mt-4">
                     <thead>

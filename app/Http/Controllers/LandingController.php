@@ -54,9 +54,12 @@ class LandingController extends Controller
         $mentor = Mentor::where('user_id', $id)->first();
         if ($mentor) {
             $user = User::find($mentor->user_id);
-            return view('pages.landing.profile', ['mentor'=> $mentor, 'user'=> $user]);
+            return view('pages.profile.profile', ['mentor'=> $mentor, 'user'=> $user]);
         } else {
-            return redirect('/');
+            // dashboard admin
+            $user = User::find($id);
+            // $data_admin = User::where('role', 'admin');
+            return view('pages.profile.profileAdmin', ['user'=> $user]);
         }
     }
 
@@ -65,7 +68,7 @@ class LandingController extends Controller
         $id = Auth::user()->id;
         $mentor = Mentor::where('user_id', $id)->first();
         $user = User::find($mentor->user_id);
-        return view('pages.landing.editProfile', ['mentor'=> $mentor, 'user'=> $user]);
+        return view('pages.profile.editProfile', ['mentor'=> $mentor, 'user'=> $user]);
     }
 
     public function update(Request $request, $id)
