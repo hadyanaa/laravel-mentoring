@@ -14,6 +14,7 @@ Presensi
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Data Presensi</h6>
+                <a href="/presensi/export_excel" class="btn btn-primary">Export Excel</a>
             </div>
             <!-- Card Body -->
             <div class="card-body table-responsive">

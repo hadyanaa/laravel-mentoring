@@ -10,6 +10,8 @@ use App\Models\Mentee;
 use App\Models\Berita;
 use DateTime;
 use Tdanandeh\SweetAlert\SweetAlert;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PresensiExport;
 
 class PresensiController extends Controller
 {
@@ -24,6 +26,12 @@ class PresensiController extends Controller
             ]);
         }
     }
+
+    // export excel 
+    public function export_excel()
+	{
+		return Excel::download(new PresensiExport, 'presensi.xlsx');
+	}
 
     public function create()
     {

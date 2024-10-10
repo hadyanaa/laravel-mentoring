@@ -38,6 +38,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     //CRU Presensi
     Route::resource('presensi', PresensiController::class);
+    Route::get('/presensi/export_excel', 'PresensiController@export_excel');
     
     //CRU Presensi by mentor
     Route::get('/presensi-kelompok', [PresensiMentorController::class, 'view']);
